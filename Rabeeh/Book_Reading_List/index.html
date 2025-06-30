@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Catalog</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <input type="text" id="search-bar" placeholder="Search books...">
+    </header>
+    <main id="home">
+        <div class="banner" style="background-image: url('https://via.placeholder.com/1600x400');">
+            <h2>Welcome to the Book Catalog</h2>
+        </div>
+        <h2>Explore Books</h2>
+        <select id="genre-filter">
+            <option value="all">All Genres</option>
+            <option value="Science Fiction">Sci-Fi</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Dystopian">Dystopian</option>
+            <option value="Fiction">Classic</option>
+            <option value="Post-Apocalyptic">Post-Apocalyptic</option>
+            <option value="Gothic">Gothic</option>
+        </select>
+        <div class="book-list">
+            <div class="book-card" data-title="Dune">
+                <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                <h3>Dune</h3>
+                <p><strong>Author:</strong> Frank Herbert</p>
+                <p><strong>Genre:</strong> Science Fiction</p>
+                <button class="btn" onclick="showBookDetails('Dune')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Hobbit">
+                <img src="images/hobbit.jpeg" alt="The Hobbit Cover" class="book-cover">
+                <h3>The Hobbit</h3>
+                <p><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <button class="btn" onclick="showBookDetails('The Hobbit')">View Details</button>
+            </div>
+            <div class="book-card" data-title="1984">
+                <img src="images/1984.png" alt="1984 Cover" class="book-cover">
+                <h3>1984</h3>
+                <p><strong>Author:</strong> George Orwell</p>
+                <p><strong>Genre:</strong> Dystopian</p>
+                <button class="btn" onclick="showBookDetails('1984')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Pride and Prejudice">
+                <img src="images/pride.jpeg" alt="Pride and Prejudice Cover" class="book-cover">
+                <h3>Pride and Prejudice</h3>
+                <p><strong>Author:</strong> Jane Austen</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <button class="btn" onclick="showBookDetails('Pride and Prejudice')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Great Gatsby">
+                <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="book-cover">
+                <h3>The Great Gatsby</h3>
+                <p><strong>Author:</strong> F. Scott Fitzgerald</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <button class="btn" onclick="showBookDetails('The Great Gatsby')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="To Kill a Mockingbird">
+                <img src="images/mockingbird.webp" alt="To Kill a Mockingbird Cover" class="book-cover">
+                <h3>To Kill a Mockingbird</h3>
+                <p><strong>Author:</strong> Harper Lee</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <button class="btn" onclick="showBookDetails('To Kill a Mockingbird')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Lord of the Rings">
+                <img src="images/lotr.jpg" alt="Lord of the Rings Cover" class="book-cover">
+                <h3>Lord of the Rings</h3>
+                <p><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <button class="btn" onclick="showBookDetails('Lord of the Rings')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Catcher in the Rye">
+                <img src="images/catcher.jpg" alt="The Catcher in the Rye Cover" class="book-cover">
+                <h3>The Catcher in the Rye</h3>
+                <p><strong>Author:</strong> J.D. Salinger</p>
+                <p><strong>Genre:</strong> Fiction</p>
+                <button class="btn" onclick="showBookDetails('The Catcher in the Rye')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Road">
+                <img src="images/road.webp" alt="The Road Cover" class="book-cover">
+                <h3>The Road</h3>
+                <p><strong>Author:</strong> Cormac McCarthy</p>
+                <p><strong>Genre:</strong> Post-Apocalyptic</p>
+                <button class="btn" onclick="showBookDetails('The Road')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Frankenstein">
+                <img src="images/frankenstein.jpg" alt="Frankenstein Cover" class="book-cover">
+                <h3>Frankenstein</h3>
+                <p><strong>Author:</strong> Mary Shelley</p>
+                <p><strong>Genre:</strong> Gothic</p>
+                <button class="btn" onclick="showBookDetails('Frankenstein')">View Details</button>
+            </div>
+        </div>
+        <button id="see-more-btn" class="btn">See More</button>
+        <!-- Modal for Book Details -->
+        <div id="book-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div id="book-details-content"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column">
+            <h3>Social</h3>
+            <a href="https://github.com/RABEEH009" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <a href="mailto:rabeeh0129@gmail.com">Email: rabeeh0129@gmail.com</a>
+        </div>
+        <div class="footer-column">
+            <h3>Legal</h3>
+            <p>Created by Rabeeh © 2025</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
