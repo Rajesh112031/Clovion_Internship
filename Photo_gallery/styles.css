@@ -1,21 +1,21 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
+    background-color: #f4f4f4f4;
 }
 
 header {
-    background-color: #111;
+    background-color: #333;
+    color: #fff;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
-    margin: 0;
+.logo img {
+    height: 50px;
 }
 
 nav ul {
@@ -33,24 +33,109 @@ nav ul li a {
     text-decoration: none;
 }
 
-.social-icons a {
+.hero {
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    margin-left: 10px;
+    text-align: center;
+    padding: 100px 0;
 }
 
-.gallery {
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.service-item {
+    text-align: center;
+    width: 30%;
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+
+.upload-section {
+    padding: 20px;
+    text-align: center;
+}
+
+#dropzone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+#dropzone p {
+    margin: 0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e05c3b5;
+}
+
+.photos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     padding: 20px;
 }
 
+.gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
 .gallery-item img {
     width: 100%;
-    display: block;
+    height: auto;
     transition: transform 0.3s ease;
 }
 
 .gallery-item img:hover {
     transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
 }

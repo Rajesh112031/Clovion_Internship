@@ -8,7 +8,9 @@
 </head>
 <body>
     <header>
-        <h1>Photo Gallery</h1>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -18,20 +20,45 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
     </header>
     <main>
-        <section class="gallery">
-            <div class="gallery-item"><img src="c:\Users\shami\Downloads\pexels-dejongwout-571169.jpg" alt="Nature"></div>
-            <div class="gallery-item"><img src="image2.jpg" alt="Portrait"></div>
-            <div class="gallery-item"><img src="image3.jpg" alt="People"></div>
-            <!-- Add more images as needed -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Photography Studio</h1>
+                <p>Photography.</p>
+                <a href="#" class="btn">Contact us</a>
+            </div>
+        </section>
+        <section class="services">
+            <div class="service-item">
+                <img src="images/service-1.jpg" alt="Shooting">
+                <h3>Shooting</h3>
+                <p>shooting videos.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/service-2.jpg" alt="Videos">
+                <h3>Videos</h3>
+                <p>videos.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/service-3.jpg" alt="Editing">
+                <h3>Editing</h3>
+                <p>edited photos</p>
+            </div>
+        </section>
+        <section class="upload-section">
+            <h2>Upload Your Photos</h2>
+            <div id="dropzone" ondrop="drop(event)" ondragover="dragOver(event)">
+                <p>Drag and drop images here, or click to browse.</p>
+                <input type="file" id="fileUpload" name="photos" accept="image/*" multiple style="display: none;" onchange="uploadFiles(this.files)">
+            </div>
+            <button onclick="document.getElementById('fileUpload').click();">Browse</button>
+            <div id="photosGrid" class="photos-grid"></div>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2025 Photo Gallery</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
