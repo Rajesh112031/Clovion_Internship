@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeFlix - Premium Manga Streaming</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
+            color: white;
+            font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(10px);
+        }
+
+        .header.scrolled {
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e50914, #ff6b35, #e50914);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover {
+            color: #e50914;
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #e50914, #ff6b35);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 10px 40px 10px 20px;
+            color: white;
+            font-size: 14px;
+            width: 250px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #e50914;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .notifications, .profile-pic {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #333, #555);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .notifications:hover, .profile-pic:hover {
+            transform: scale(1.1);
+            border-color: #e50914;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(
+                rgba(0,0,0,0.4), 
+                rgba(0,0,0,0.6),
+                rgba(20,20,20,0.8)
+            ), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&h=900&fit=crop&crop=center') center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            background: linear-gradient(45deg, #e50914, #ff6b35);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            color: rgba(255,255,255,0.9);
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-play {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            color: #141414;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+        }
+
+        .btn-play:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255,255,255,0.4);
+        }
+
+        .btn-info {
+            background: rgba(109,109,110,0.8);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-info:hover {
+            background: rgba(109,109,110,0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+        .rating-stars {
+            color: #ffd700;
+        }
+
+        .rating-info {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Enhanced Content Sections */
+        .content {
+            padding: 0 60px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, #e50914, #ff6b35);
+            border-radius: 2px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 15px;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 20px 0;
+        }
+
+        .card {
+            min-width: 220px;
+            height: 330px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+        }
+
+        .card:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.3);
+            z-index: 100;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 75%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .card-image::before {
+            opacity: 1;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: rgba(255,255,255,0.9);
+            color: #141414;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .card-info {
+            padding: 20px;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: white;
+        }
+
+        .card-genre {
+            font-size: 13px;
+            color: #b3b3b3;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .genre-tag {
+            background: rgba(229, 9, 20, 0.2);
+            color: #ff6b6b;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 20px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .section:hover .carousel-nav {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(229, 9, 20, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: -25px;
+        }
+
+        .carousel-nav.next {
+            right: -25px;
+        }
+
+        /* Manga Images */
+        .one-piece { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
+        .demon-slayer { background-image: url('https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&h=600&fit=crop'); }
+        .attack-titan { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
+        .my-hero { background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=600&fit=crop'); }
+        .jujutsu { background-image: url('https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=400&h=600&fit=crop'); }
+        .naruto { background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&h=600&fit=crop'); }
+        .one-punch { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
+        .dragon-ball { background-image: url('https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=600&fit=crop'); }
+        .death-note { background-image: url('https://images.unsplash.com/photo-1621952238642-6d91acb5e3ce?w=400&h=600&fit=crop'); }
+        .fullmetal { background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&h=600&fit=crop'); }
+        .bleach { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
+        .hunter { background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=600&fit=crop'); }
+
+        /* Loading Animation */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .card {
+                min-width: 200px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .search-input {
+                width: 150px;
+            }
+            
+            .hero {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 42px;
+            }
+            
+            .hero-description {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 0 20px;
+            }
+            
+            .card {
+                min-width: 160px;
+                height: 240px;
+            }
+            
+            .carousel-nav {
+                display: none;
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #e50914, #ff6b35);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #141414;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #e50914, #ff6b35);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff0f1a, #ff7a40);
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#" class="logo">AnimeFlix</a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#manga">Manga</a></li>
+                <li><a href="#anime">Anime</a></li>
+                <li><a href="#trending">Trending</a></li>
+                <li><a href="#mylist">My List</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search manga, anime...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="notifications"><i class="fas fa-bell"></i></div>
+            <div class="profile-pic"><i class="fas fa-user"></i></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">New Chapter Available</div>
+            <h1 class="hero-title">One Piece</h1>
+            <p class="hero-description">Join Monkey D. Luffy and his Straw Hat Pirates as they search for the ultimate treasure, One Piece, in the most epic adventure across the Grand Line.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-play">
+                    <i class="fas fa-play"></i> Read Now
+                </a>
+                <a href="#" class="btn btn-info">
+                    <i class="fas fa-info-circle"></i> More Info
+                </a>
+            </div>
+            <div class="hero-rating">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-info">4.9/5 • 1000+ Chapters • Adventure</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="content">
+        <!-- Trending Now -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i> Trending Now
+            </h2>
+            <div class="carousel">
+                <button class="carousel-nav prev" onclick="slideCarousel('trending', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container" id="trending-carousel">
+                    <div class="card">
+                        <div class="card-image demon-slayer">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Demon Slayer</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Supernatural</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image attack-titan">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Attack on Titan</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image my-hero">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">My Hero Academia</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Superhero</span>
+                                <span class="genre-tag">School</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image jujutsu">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Jujutsu Kaisen</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Supernatural</span>
+                                <span class="genre-tag">Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image naruto">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Naruto</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Ninja</span>
+                                <span class="genre-tag">Adventure</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image one-punch">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">One Punch Man</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Superhero</span>
+                                <span class="genre-tag">Comedy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav next" onclick="slideCarousel('trending', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Popular Manga -->
+        <section class="section">
+            <h2 class="section-title">
+                <i class="fas fa-crown"></i> Popular Manga
+            </h2>
+            <div class="carousel">
+                <button class="carousel-nav prev" onclick="slideCarousel('popular', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container" id="popular-carousel">
+                    <div class="card">
+                        <div class="card-image one-piece">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">One Piece</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Comedy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image dragon-ball">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Dragon Ball</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Martial Arts</span>
+                                <span class="genre-tag">Adventure</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image death-note">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Death Note</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Psychological</span>
+                                <span class="genre-tag">Thriller</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image fullmetal">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Fullmetal Alchemist</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Military</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image bleach">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Bleach</div>
+                            <div class="card-genre">
