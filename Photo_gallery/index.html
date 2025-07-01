@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Photography Studio</h1>
+                <p>Photography.</p>
+                <a href="#" class="btn">Contact us</a>
+            </div>
+        </section>
+        <section class="services">
+            <div class="service-item">
+                <img src="images/service-1.jpg" alt="Shooting">
+                <h3>Shooting</h3>
+                <p>shooting videos.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/service-2.jpg" alt="Videos">
+                <h3>Videos</h3>
+                <p>videos.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/service-3.jpg" alt="Editing">
+                <h3>Editing</h3>
+                <p>edited photos</p>
+            </div>
+        </section>
+        <section class="upload-section">
+            <h2>Upload Your Photos</h2>
+            <div id="dropzone" ondrop="drop(event)" ondragover="dragOver(event)">
+                <p>Drag and drop images here, or click to browse.</p>
+                <input type="file" id="fileUpload" name="photos" accept="image/*" multiple style="display: none;" onchange="uploadFiles(this.files)">
+            </div>
+            <button onclick="document.getElementById('fileUpload').click();">Browse</button>
+            <div id="photosGrid" class="photos-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Photo Gallery</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
