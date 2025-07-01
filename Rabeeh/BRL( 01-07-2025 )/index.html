@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.avif" alt="LitSphere Logo">
+            <h1>LitSphere</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <input type="text" id="search-bar" placeholder="Search books..." class="search-input">
+    </header>
+    <main id="home">
+        <div class="banner" style="background-image: url('images/welcome-banner.jpg');">
+            <div class="banner-overlay">
+                <h2 class="banner-title">Welcome to LitSphere</h2>
+                <p class="banner-subtitle">Explore a universe of books, from timeless classics to modern masterpieces.</p>
+            </div>
+        </div>
+        <div class="intro-section">
+            <h2 class="intro-title">Discover the World of Literature</h2>
+            <p class="intro-text">At LitSphere, we are passionate about bringing the joy of reading to everyone. Launched on July 1, 2025, our platform is designed to cater to book lovers of all ages and interests, offering a curated selection that spans genres, cultures, and eras. Whether you're seeking a gripping thriller, a heartfelt romance, or a thought-provoking non-fiction work, LitSphere is your gateway to endless stories.</p>
+            <p class="intro-text">Our mission goes beyond just providing books; we aim to foster a community where readers can share insights, discover new authors, and deepen their appreciation for literature. With seamless integration of the Google Books API, we ensure that our catalog is always up-to-date with the latest releases and timeless classics alike. This dedication to quality and variety sets us apart in the digital reading landscape.</p>
+            <p class="intro-text">Explore our features, including detailed book summaries, author profiles, and personalized recommendations as we grow. LitSphere is more than a website—it’s a celebration of the written word, inviting you to lose yourself in pages that inspire, challenge, and entertain. Join us on this literary journey and let’s turn the page together!</p>
+        </div>
+        <h2 class="section-title">Featured Books</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="Dune">
+                <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                <h3 class="card-title">Dune</h3>
+                <p class="card-info"><strong>Author:</strong> Frank Herbert</p>
+                <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Dune')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Hobbit">
+                <img src="images/hobbit.jpeg" alt="The Hobbit Cover" class="book-cover">
+                <h3 class="card-title">The Hobbit</h3>
+                <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Hobbit')">View Details</button>
+            </div>
+            <div class="book-card" data-title="1984">
+                <img src="images/1984.png" alt="1984 Cover" class="book-cover">
+                <h3 class="card-title">1984</h3>
+                <p class="card-info"><strong>Author:</strong> George Orwell</p>
+                <p class="card-info"><strong>Genre:</strong> Dystopian</p>
+                <button class="btn-primary" onclick="showBookDetails('1984')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Pride and Prejudice">
+                <img src="images/pride.jpeg" alt="Pride and Prejudice Cover" class="book-cover">
+                <h3 class="card-title">Pride and Prejudice</h3>
+                <p class="card-info"><strong>Author:</strong> Jane Austen</p>
+                <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Pride and Prejudice')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Great Gatsby">
+                <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="book-cover">
+                <h3 class="card-title">The Great Gatsby</h3>
+                <p class="card-info"><strong>Author:</strong> F. Scott Fitzgerald</p>
+                <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Great Gatsby')">View Details</button>
+            </div>
+            <div class="book-card" data-title="To Kill a Mockingbird">
+                <img src="images/mockingbird.webp" alt="To Kill a Mockingbird Cover" class="book-cover">
+                <h3 class="card-title">To Kill a Mockingbird</h3>
+                <p class="card-info"><strong>Author:</strong> Harper Lee</p>
+                <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('To Kill a Mockingbird')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Lord of the Rings">
+                <img src="images/lotr.jpg" alt="Lord of the Rings Cover" class="book-cover">
+                <h3 class="card-title">Lord of the Rings</h3>
+                <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Lord of the Rings')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Catcher in the Rye">
+                <img src="images/catcher.jpg" alt="The Catcher in the Rye Cover" class="book-cover">
+                <h3 class="card-title">The Catcher in the Rye</h3>
+                <p class="card-info"><strong>Author:</strong> J.D. Salinger</p>
+                <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Catcher in the Rye')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Road">
+                <img src="images/road.webp" alt="The Road Cover" class="book-cover">
+                <h3 class="card-title">The Road</h3>
+                <p class="card-info"><strong>Author:</strong> Cormac McCarthy</p>
+                <p class="card-info"><strong>Genre:</strong> Post-Apocalyptic</p>
+                <button class="btn-primary" onclick="showBookDetails('The Road')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Frankenstein">
+                <img src="images/frankenstein.jpg" alt="Frankenstein Cover" class="book-cover">
+                <h3 class="card-title">Frankenstein</h3>
+                <p class="card-info"><strong>Author:</strong> Mary Shelley</p>
+                <p class="card-info"><strong>Genre:</strong> Gothic</p>
+                <button class="btn-primary" onclick="showBookDetails('Frankenstein')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Brave New World">
+                <img src="images/brave.webp" alt="Brave New World Cover" class="book-cover">
+                <h3 class="card-title">Brave New World</h3>
+                <p class="card-info"><strong>Author:</strong> Aldous Huxley</p>
+                <p class="card-info"><strong>Genre:</strong> Dystopian</p>
+                <button class="btn-primary" onclick="showBookDetails('Brave New World')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Animal Farm">
+                <img src="images/animal.jpg" alt="Animal Farm Cover" class="book-cover">
+                <h3 class="card-title">Animal Farm</h3>
+                <p class="card-info"><strong>Author:</strong> George Orwell</p>
+                <p class="card-info"><strong>Genre:</strong> Satire</p>
+                <button class="btn-primary" onclick="showBookDetails('Animal Farm')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Chronicles of Narnia">
+                <img src="images/narnia.jpg" alt="The Chronicles of Narnia Cover" class="book-cover">
+                <h3 class="card-title">The Chronicles of Narnia</h3>
+                <p class="card-info"><strong>Author:</strong> C.S. Lewis</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Chronicles of Narnia')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Charlotte's Web">
+                <img src="images/charlotte.jpeg" alt="Charlotte's Web Cover" class="book-cover">
+                <h3 class="card-title">Charlotte's Web</h3>
+                <p class="card-info"><strong>Author:</strong> E.B. White</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Charlotte's Web')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Alchemist">
+                <img src="images/alchemist.jpg" alt="The Alchemist Cover" class="book-cover">
+                <h3 class="card-title">The Alchemist</h3>
+                <p class="card-info"><strong>Author:</strong> Paulo Coelho</p>
+                <p class="card-info"><strong>Genre:</strong> Philosophical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Alchemist')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Shining">
+                <img src="images/shining.jpg" alt="The Shining Cover" class="book-cover">
+                <h3 class="card-title">The Shining</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Shining')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Da Vinci Code">
+                <img src="images/davinci.jpg" alt="The Da Vinci Code Cover" class="book-cover">
+                <h3 class="card-title">The Da Vinci Code</h3>
+                <p class="card-info"><strong>Author:</strong> Dan Brown</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Da Vinci Code')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="A Game of Thrones">
+                <img src="images/thrones.jpg" alt="A Game of Thrones Cover" class="book-cover">
+                <h3 class="card-title">A Game of Thrones</h3>
+                <p class="card-info"><strong>Author:</strong> George R.R. Martin</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('A Game of Thrones')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Handmaid's Tale">
+                <img src="images/tale.jpg" alt="The Handmaid's Tale Cover" class="book-cover">
+                <h3 class="card-title">The Handmaid's Tale</h3>
+                <p class="card-info"><strong>Author:</strong> Margaret Atwood</p>
+                <p class="card-info"><strong>Genre:</strong> Dystopian</p>
+                <button class="btn-primary" onclick="showBookDetails('The Handmaid's Tale')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="One Hundred Years of Solitude">
+                <img src="images/solitude.jpg" alt="One Hundred Years of Solitude Cover" class="book-cover">
+                <h3 class="card-title">One Hundred Years of Solitude</h3>
+                <p class="card-info"><strong>Author:</strong> Gabriel García Márquez</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('One Hundred Years of Solitude')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Fellowship of the Ring">
+                <img src="images/fellowship.jpg" alt="The Fellowship of the Ring Cover" class="book-cover">
+                <h3 class="card-title">The Fellowship of the Ring</h3>
+                <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Fellowship of the Ring')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Two Towers">
+                <img src="images/towers.jpg" alt="The Two Towers Cover" class="book-cover">
+                <h3 class="card-title">The Two Towers</h3>
+                <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Two Towers')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Return of the King">
+                <img src="images/king.jpg" alt="The Return of the King Cover" class="book-cover">
+                <h3 class="card-title">The Return of the King</h3>
+                <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Return of the King')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Philosopher's Stone">
+                <img src="images/philosopher.jpg" alt="Harry Potter and the Philosopher's Stone Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Philosopher's Stone</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Philosopher's Stone')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Chamber of Secrets">
+                <img src="images/chamber.jpg" alt="Harry Potter and the Chamber of Secrets Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Chamber of Secrets')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Prisoner of Azkaban">
+                <img src="images/prisoner.jpg" alt="Harry Potter and the Prisoner of Azkaban Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Prisoner of Azkaban</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Prisoner of Azkaban')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Goblet of Fire">
+                <img src="images/fire.jpg" alt="Harry Potter and the Goblet of Fire Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Goblet of Fire</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Goblet of Fire')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Order of the Phoenix">
+                <img src="images/phoenix.jpg" alt="Harry Potter and the Order of the Phoenix Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Order of the Phoenix</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Order of the Phoenix')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Half-Blood Prince">
+                <img src="images/prince.jpg" alt="Harry Potter and the Half-Blood Prince Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Half-Blood Prince</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Half-Blood Prince')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Harry Potter and the Deathly Hallows">
+                <img src="images/hallows.jpg" alt="Harry Potter and the Deathly Hallows Cover" class="book-cover">
+                <h3 class="card-title">Harry Potter and the Deathly Hallows</h3>
+                <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Deathly Hallows')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Book Thief">
+                <img src="images/thief.jpg" alt="The Book Thief Cover" class="book-cover">
+                <h3 class="card-title">The Book Thief</h3>
+                <p class="card-info"><strong>Author:</strong> Markus Zusak</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Book Thief')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Night Circus">
+                <img src="images/circus.jpg" alt="The Night Circus Cover" class="book-cover">
+                <h3 class="card-title">The Night Circus</h3>
+                <p class="card-info"><strong>Author:</strong> Erin Morgenstern</p>
+                <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                <button class="btn-primary" onclick="showBookDetails('The Night Circus')">View Details</button>
+            </div>
+        </div>
+        <button id="see-more-btn" class="btn-primary">See More</button>
+        <div class="reading-insight">
+            <img src="images/read-img-2.webp" alt="Reading Insight" class="insight-image">
+            <div class="insight-content">
+                <h2 class="section-title">The Joy of Reading</h2>
+                <p class="insight-text">Books are more than just pages—they are portals to new worlds, offering wisdom, adventure, and inspiration. Reading nurtures empathy by allowing us to walk in others’ shoes, sharpens our minds through critical thinking, and connects us across cultures with shared human experiences. At LitSphere, we celebrate this transformative power, curating a diverse collection that spans centuries and continents.</p>
+                <p class="insight-text">The act of reading can be a personal retreat or a communal celebration. Whether you're delving into the intricate plots of a mystery novel or savoring the lyrical prose of a classic, each book offers a unique journey. LitSphere enhances this experience with detailed summaries, author insights, and a community space where readers can discuss and recommend their favorites, making every reading session more enriching.</p>
+                <p class="insight-text">Our platform encourages a lifelong love for literature, from children discovering their first stories to adults exploring philosophical treatises. With features like personalized reading lists and upcoming literary events, LitSphere aims to be your companion in this endless adventure, ensuring that the joy of reading remains a vibrant part of your life.</p>
+            </div>
+        </div>
+        <div class="detailed-books">
+            <div class="book-detail">
+                <h3 class="detail-title">Dune</h3>
+                <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                <p class="detail-info"><strong>Author:</strong> Frank Herbert | <strong>Genre:</strong> Science Fiction | <strong>Year:</strong> 1965</p>
+                <p class="detail-text">A sweeping epic set on the desert planet Arrakis, exploring politics, religion, and ecology through the eyes of young Paul Atreides.</p>
+            </div>
+            <div class="book-detail">
+                <h3 class="detail-title">The Hobbit</h3>
+                <img src="images/hobbit.jpeg" alt="The Hobbit Cover" class="book-cover">
+                <p class="detail-info"><strong>Author:</strong> J.R.R. Tolkien | <strong>Genre:</strong> Fantasy | <strong>Year:</strong> 1937</p>
+                <p class="detail-text">A charming tale of Bilbo Baggins, a reluctant hero on a quest to reclaim a dwarven treasure guarded by a dragon.</p>
+            </div>
+            <div class="book-detail">
+                <h3 class="detail-title">1984</h3>
+                <img src="images/1984.png" alt="1984 Cover" class="book-cover">
+                <p class="detail-info"><strong>Author:</strong> George Orwell | <strong>Genre:</strong> Dystopian | <strong>Year:</strong> 1949</p>
+                <p class="detail-text">A haunting vision of a totalitarian future where surveillance and propaganda dominate, challenging personal freedom.</p>
+            </div>
+        </div>
+        <div class="college-image">
+            <img src="images/img2.webp" alt="College Style 1">
+            <img src="images/img1.jpg" alt="College Style 2">
+            <img src="images/img3.jpg" alt="College Style 3">
+        </div>
+        <div class="author-list">
+            <div class="author-card" data-name="Frank Herbert">
+                <img src="images/author1.jpg" alt="Frank Herbert" class="author-image">
+                <h3 class="author-name">Frank Herbert</h3>
+                <p class="author-desc">Known for Dune series, a groundbreaking science fiction saga.</p>
+            </div>
+            <div class="author-card" data-name="J.R.R. Tolkien">
+                <img src="images/author2.jpg" alt="J.R.R. Tolkien" class="author-image">
+                <h3 class="author-name">J.R.R. Tolkien</h3>
+                <p class="author-desc">Master of Middle-earth sagas, creator of The Lord of the Rings.</p>
+            </div>
+            <div class="author-card" data-name="George Orwell">
+                <img src="images/author3.jpg" alt="George Orwell" class="author-image">
+                <h3 class="author-name">George Orwell</h3>
+                <p class="author-desc">Author of dystopian classics like 1984 and Animal Farm.</p>
+            </div>
+            <div class="author-card" data-name="Jane Austen">
+                <img src="images/author4.jpg" alt="Jane Austen" class="author-image">
+                <h3 class="author-name">Jane Austen</h3>
+                <p class="author-desc">Renowned for romantic novels like Pride and Prejudice.</p>
+            </div>
+            <div class="author-card" data-name="F. Scott Fitzgerald">
+                <img src="images/author5.jpg" alt="F. Scott Fitzgerald" class="author-image">
+                <h3 class="author-name">F. Scott Fitzgerald</h3>
+                <p class="author-desc">Chronicler of the Jazz Age with works like The Great Gatsby.</p>
+            </div>
+            <div class="author-card hidden" data-name="Harper Lee">
+                <img src="images/author6.jpg" alt="Harper Lee" class="author-image">
+                <h3 class="author-name">Harper Lee</h3>
+                <p class="author-desc">Author of Southern literature classic To Kill a Mockingbird.</p>
+            </div>
+            <div class="author-card hidden" data-name="J.D. Salinger">
+                <img src="images/author7.jpg" alt="J.D. Salinger" class="author-image">
+                <h3 class="author-name">J.D. Salinger</h3>
+                <p class="author-desc">Known for youthful narratives like The Catcher in the Rye.</p>
+            </div>
+            <div class="author-card hidden" data-name="Cormac McCarthy">
+                <img src="images/author8.jpg" alt="Cormac McCarthy" class="author-image">
+                <h3 class="author-name">Cormac McCarthy</h3>
+                <p class="author-desc">Master of bleak fiction with The Road and Blood Meridian.</p>
+            </div>
+            <div class="author-card hidden" data-name="Mary Shelley">
+                <img src="images/author9.jpg" alt="Mary Shelley" class="author-image">
+                <h3 class="author-name">Mary Shelley</h3>
+                <p class="author-desc">Pioneer of Gothic tales with Frankenstein.</p>
+            </div>
+            <div class="author-card hidden" data-name="Paulo Coelho">
+                <img src="images/author10.jpg" alt="Paulo Coelho" class="author-image">
+                <h3 class="author-name">Paulo Coelho</h3>
+                <p class="author-desc">Author of philosophical works like The Alchemist.</p>
+            </div>
+            <div class="author-card hidden" data-name="Aldous Huxley">
+                <img src="images/author11.jpg" alt="Aldous Huxley" class="author-image">
+                <h3 class="author-name">Aldous Huxley</h3>
+                <p class="author-desc">Famous for dystopian vision in Brave New World.</p>
+            </div>
+            <div class="author-card hidden" data-name="C.S. Lewis">
+                <img src="images/author12.jpg" alt="C.S. Lewis" class="author-image">
+                <h3 class="author-name">C.S. Lewis</h3>
+                <p class="author-desc">Creator of The Chronicles of Narnia series.</p>
+            </div>
+            <div class="author-card hidden" data-name="E.B. White">
+                <img src="images/author13.jpg" alt="E.B. White" class="author-image">
+                <h3 class="author-name">E.B. White</h3>
+                <p class="author-desc">Beloved for children’s classic Charlotte's Web.</p>
+            </div>
+            <div class="author-card hidden" data-name="Stephen King">
+                <img src="images/author14.jpg" alt="Stephen King" class="author-image">
+                <h3 class="author-name">Stephen King</h3>
+                <p class="author-desc">Master of horror with The Shining and more.</p>
+            </div>
+            <div class="author-card hidden" data-name="Dan Brown">
+                <img src="images/author15.jpg" alt="Dan Brown" class="author-image">
+                <h3 class="author-name">Dan Brown</h3>
+                <p class="author-desc">Thriller writer known for The Da Vinci Code.</p>
+            </div>
+        </div>
+        <button id="see-more-authors-btn" class="btn-primary">See More Authors</button>
+        <div class="author-insight">
+            <h2 class="section-title">Authors Shaping Literary Legacy</h2>
+            <p class="insight-text">LitSphere honors the visionaries who have shaped the literary world with their groundbreaking works. From Frank Herbert’s ecological epics in the Dune series to J.R.R. Tolkien’s mythical realms in The Lord of the Rings, these authors have left an indelible mark on global literature, inspiring readers and writers alike with their creativity and depth.</p>
+            <p class="insight-text">Each author brings a unique perspective, whether it’s George Orwell’s cautionary tales of dystopia, Jane Austen’s insightful explorations of human relationships, or Paulo Coelho’s philosophical journeys. Their stories transcend time, offering lessons in resilience, love, and the human condition, and LitSphere is proud to showcase their contributions through detailed profiles and curated selections.</p>
+            <p class="insight-text">As we expand, LitSphere will continue to celebrate these literary giants and emerging talents, providing a platform for their works to reach new audiences. Join us in recognizing their legacy, and explore how their narratives continue to influence modern storytelling and cultural discourse worldwide.</p>
+        </div>
+        <div id="book-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div id="book-details-content"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column">
+            <h3 class="footer-heading">Social</h3>
+            <a href="https://github.com/RABEEH009" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="footer-link">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <a href="mailto:rabeeh0129@gmail.com" class="footer-link">Email: rabeeh0129@gmail.com</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Legal</h3>
+            <p class="footer-text">Created by Rabeeh © 2025</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
