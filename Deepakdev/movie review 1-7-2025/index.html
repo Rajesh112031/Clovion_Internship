@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepakdev Reviews</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #0f2027);
+      background-attachment: fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc70;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url('images/hero-bg.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    .scroll-btn {
+      text-decoration: none;
+      color: white;
+      background-color: #ff5722;
+      padding: 12px 25px;
+      border-radius: 30px;
+      transition: background-color 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background-color: #e64a19;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 50px 0 20px;
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .movie-intro {
+      max-width: 900px;
+      margin: 60px auto 20px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .movie-intro p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+
+    .movie-intro img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .movie-intro .below-text {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #ddd;
+    }
+
+    .movie-card {
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #222;
+      margin: 20px auto;
+      max-width: 850px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.02);
+    }
+
+    .movie-card img {
+      width: 250px;
+      object-fit: cover;
+    }
+
+    .movie-info {
+      padding: 20px;
+    }
+
+    .movie-info h2 {
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .movie-info p {
+      margin-bottom: 15px;
+    }
+
+    .movie-info a {
+      text-decoration: none;
+      background-color: #111;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .movie-info a:hover {
+      background-color: #444;
+    }
+
+    footer {
+      background-color: #0d1117;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 14px;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 60px;
+    }
+
+    @media screen and (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .movie-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .movie-card img {
+        width: 100%;
+      }
+
+      .movie-info {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>🎬 Deepakdev Reviews</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to Movie Reviews</h1>
+    <p>Explore reviews of the latest blockbusters and timeless classics.</p>
+    <a href="#movie-intro" class="scroll-btn">Let's Dive In</a>
+  </section>
+
+  <!-- Movie Sentence Section -->
+  <section class="movie-intro" id="movie-intro">
+    <p>Movies aren't just entertainment — they're a portal into imagination, emotion, and inspiration. Let's discover what makes these stories timeless.</p>
+    <img src="images/cinema.jpg" alt="Cinema Vibe">
+    <p class="below-text">From thrilling action to emotional drama,
+Movies connect us all through powerful storytelling.
+They spark imagination, evoke deep emotions,
+And leave lasting impressions across generations.</p>
+  </section>
+
+  <!-- Movie Cards -->
+  <main id="movies">
+    <h2 class="section-heading">Latest Movie Reviews</h2>
+
+    <section class="movie-card">
+      <img src="images/inception.png" alt="Inception Poster">
+      <div class="movie-info">
+        <h2>Inception</h2>
+        <p>A mind-bending thriller by Christopher Nolan that explores dreams within dreams.</p>
+        <a href="#">Read Review</a>
+      </div>
+    </section>
+
+    <section class="movie-card">
+      <img src="images/interstellar.png" alt="Interstellar Poster">
+      <div class="movie-info">
+        <h2>Interstellar</h2>
+        <p>A journey through space and time, exploring love, physics, and humanity.</p>
+        <a href="#">Read Review</a>
+      </div>
+    </section>
+
+    <section class="movie-card">
+      <img src="images/dark-knight.jpg" alt="The Dark Knight Poster">
+      <div class="movie-info">
+        <h2>The Dark Knight</h2>
+        <p>Heath Ledger’s Joker redefined villains in this gripping Batman classic.</p>
+        <a href="#">Read Review</a>
+      </div>
+    </section>
+
+    <section class="movie-card">
+      <img src="images/avatar.jpg" alt="Avatar Poster">
+      <div class="movie-info">
+        <h2>Avatar</h2>
+        <p>James Cameron’s visual masterpiece takes us deep into the world of Pandora.</p>
+        <a href="#">Read Review</a>
+      </div>
+    </section>
+
+    <section class="movie-card">
+      <img src="images/oppenheimer.jpg" alt="Oppenheimer Poster">
+      <div class="movie-info">
+        <h2>Oppenheimer</h2>
+        <p>Christopher Nolan’s historical drama explores the weight of invention and legacy.</p>
+        <a href="#">Read Review</a>
+      </div>
+    </section>
+
+    <section class="movie-intro" style="margin-top: 40px;">
+  <p>Movies spark dreams and challenge our thoughts.<br>
+     They transport us to distant worlds and deeper truths.<br>
+     Every scene tells a story, every character leaves a mark.<br>
+     At Deepakdev Reviews, we celebrate the magic of cinema.
+  </p>
+    </section>
+
+
+
+  <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <img src="images/collage1.jpg" alt="Movie Scene 1" style="width: 250px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);" />
+    <img src="images/collage2.jpeg" alt="Movie Scene 2" style="width: 250px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);" />
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Deepakdev Movie Reviews. All rights reserved.</p>
+  </footer>
+</body>
+</html>
