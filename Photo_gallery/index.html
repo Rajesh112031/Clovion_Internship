@@ -1,71 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>My Photo Gallery</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Photo Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Header -->
-  <header id="header" class="alt">
-    <div class="logo"><a href="#">My <span>Photo Gallery</span></a></div>
-    <a href="#menu">Menu</a>
-  </header>
-
-  <!-- Menu -->
-  <nav id="menu">
-    <ul class="links">
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#info">About & Contact</a></li>
-    </ul>
+  <!-- Top Navigation -->
+  <nav class="top-nav transparent-nav" id="navbar">
+    <div class="nav-logo">Photo Gallery</div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- Banner -->
-  <section class="banner full">
-    <article>
-      <img src="assets/images/banner-bg.jpg" alt="Banner" />
-      <div class="inner">
-        <header>
-          <p>Welcome to</p>
-          <h2>My Gallery</h2>
-        </header>
-      </div>
-    </article>
+  <!-- Fullscreen Slideshow -->
+  <section class="fullscreen-slideshow">
+    <img src="images/nature/slide01.jpg" class="active" alt="Slide 1">
+    <img src="images/nature/slide02.jpg" alt="Slide 2">
+    <img src="images/nature/slide03.jpg" alt="Slide 3">
+    <img src="images/nature/slide04.jpg" alt="Slide 4">
+    <div class="slideshow-title">Explore the Beauty of Moments</div>
+    <div class="slideshow-quote active">"Nature's calm in every frame."</div>
+    <div class="slideshow-quote">"Waves whisper, skies burn."</div>
+    <div class="slideshow-quote">"Pathways to peace."</div>
+    <div class="slideshow-quote">"Sunset over solitude."</div>
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" class="wrapper style2">
-    <div class="inner">
-      <header class="align-center">
-        <h2>Gallery</h2>
-        <p>Some of my favorite clicks</p>
-      </header>
-      <div class="gallery">
-        <div><div class="image fit"><a href="#"><img src="assets/images/pic01.jpg" alt=""></a></div></div>
-        <div><div class="image fit"><a href="#"><img src="assets/images/pic02.jpg" alt=""></a></div></div>
-        <div><div class="image fit"><a href="#"><img src="assets/images/pic03.jpg" alt=""></a></div></div>
-      </div>
+  <section id="gallery" class="gallery">
+
+    <!-- Nature Images -->
+    <div class="gallery-item">
+      <img src="images/nature/pic01.jpg" alt="Nature 1">
+      <div class="gallery-caption">"Forest breeze."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/nature/pic02.jpg" alt="Nature 2">
+      <div class="gallery-caption">"Calm waters meet blue skies."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/nature/pic03.jpg" alt="Nature 3">
+      <div class="gallery-caption">"Golden trails."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/nature/pic04.jpg" alt="Nature 4">
+      <div class="gallery-caption">"Mountain hush."</div>
+    </div>
+
+    <!-- Cities Images -->
+    <div class="gallery-item">
+      <img src="images/cities/adrian-schwarz-XS7q-baZrmE-unsplash.jpg" alt="City 1">
+      <div class="gallery-caption">"Urban flow at night."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cities/paulo-silva-pU2VRZ63EKc-unsplash.jpg" alt="City 2">
+      <div class="gallery-caption">"Streets alive."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cities/jordan-andrews--g51kA_xq2I-unsplash.jpg" alt="City 3">
+      <div class="gallery-caption">"Skyline moments."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/cities/pedro-lastra-Nyvq2juw4_o-unsplash.jpg" alt="City 4">
+      <div class="gallery-caption">"Concrete dreams."</div>
+    </div>
+
+    <!-- Portraits Images -->
+    <div class="gallery-item">
+      <img src="images/portraits/ahmed-syed-ZdOSy9_DWWg-unsplash.jpg" alt="Portrait 1">
+      <div class="gallery-caption">"Eyes of thought."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/portraits/jack-dong-ZRzgCsW5Dww-unsplash.jpg" alt="Portrait 2">
+      <div class="gallery-caption">"Bold expressions."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/portraits/khashayar-kouchpeydeh-oJAYahafC5A-unsplash.jpg" alt="Portrait 3">
+      <div class="gallery-caption">"Youthful spirit."</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/portraits/richard-jaimes-qf2l_u5W7Jg-unsplash.jpg" alt="Portrait 4">
+      <div class="gallery-caption">"Unfiltered emotion."</div>
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2>About</h2>
+    <p>This photo gallery captures beauty across nature, city life, and human expressions. Curated for simplicity and elegance.</p>
+  </section>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="inner">
-      <header class="align-center">
-        <h2>About</h2>
-        <p>This photo gallery website showcases beautiful moments captured through the lens.</p>
-        <h2>Contact</h2>
-        <p>Want to connect? Email me at <a href="mailto:your@email.com">your@email.com</a></p>
-      </header>
-    </div>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Simple Photo Gallery. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
