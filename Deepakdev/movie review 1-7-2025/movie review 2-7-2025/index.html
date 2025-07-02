@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore movie reviews for blockbusters and classics at Deepakdev Reviews." />
+  <meta name="keywords" content="movie reviews, film critiques, cinema, Deepakdev Reviews" />
+  <title>Deepakdev Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header role="banner">
+    <div class="container">
+      <h1>🎬 Deepakdev Reviews</h1>
+      <div class="header-right">
+        <nav aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="reviews.html">Reviews</a>
+        </nav>
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search movies..." aria-label="Search movies" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Welcome to Movie Reviews</h2>
+    <p>Explore reviews of the latest blockbusters and timeless classics.</p>
+    <a href="#movie-intro" class="btn-review" aria-label="Scroll to movie reviews">Let's Dive In</a>
+  </section>
+
+  <section class="movie-intro" id="movie-intro">
+    <p>Movies aren't just entertainment — they're a portal into imagination, emotion, and inspiration. Let's discover what makes these stories timeless.</p>
+    <img src="images/cinema.jpg" alt="Cinema Vibe" loading="lazy" />
+    <p class="below-text">
+      From thrilling action to emotional drama, movies connect us all through powerful storytelling. They spark imagination, evoke deep emotions, and leave lasting impressions across generations.
+    </p>
+  </section>
+
+  <main id="movies" role="main">
+    <h2 class="section-heading">Latest Movie Reviews</h2>
+    <div id="movie-list" role="region" aria-live="polite"></div>
+    <button id="load-more" class="btn-review">Load More</button>
+  </main>
+
+  <section class="movie-intro" id="movie-outro">
+    <p>
+      Movies spark dreams and challenge our thoughts.<br /> They transport us to distant worlds and deeper truths.<br /> Every scene tells a story, every character leaves a mark.<br /> At Deepakdev Reviews, we celebrate the magic of cinema.
+    </p>
+  </section>
+
+  <section class="collage">
+    <img src="images/collage1.jpg" alt="Movie Scene 1" loading="lazy" />
+    <img src="images/collage2.jpeg" alt="Movie Scene 2" loading="lazy" />
+  </section>
+
+  <footer role="contentinfo">
+    <p>© 2025 Deepakdev Movie Reviews. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
