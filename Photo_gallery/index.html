@@ -2,115 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Photo Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Top Navigation -->
-  <nav class="top-nav transparent-nav" id="navbar">
+  <nav class="top-nav" id="navbar">
     <div class="nav-logo">Photo Gallery</div>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="#gallery">Gallery</a>
+        <a href="index.html">Home</a>
+        <a href="nature.html">Nature</a>
+        <a href="cities.html">Cities</a>
+        <a href="portraits.html">Portraits</a>
+        <a href="cars.html">Cars</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </div>
+      <button class="toggle-mode" onclick="toggleMode()">🌙</button>
     </div>
   </nav>
 
-  <!-- Fullscreen Slideshow -->
   <section class="fullscreen-slideshow">
-    <img src="images/nature/slide01.jpg" class="active" alt="Slide 1">
-    <img src="images/nature/slide02.jpg" alt="Slide 2">
-    <img src="images/nature/slide03.jpg" alt="Slide 3">
-    <img src="images/nature/slide04.jpg" alt="Slide 4">
-    <div class="slideshow-title">Explore the Beauty of Moments</div>
-    <div class="slideshow-quote active">"Nature's calm in every frame."</div>
-    <div class="slideshow-quote">"Waves whisper, skies burn."</div>
-    <div class="slideshow-quote">"Pathways to peace."</div>
-    <div class="slideshow-quote">"Sunset over solitude."</div>
+    <img src="images/index/slide01.jpg" alt="Beach Sunset" class="active">
+    <img src="images/index/slide02.jpg" alt="Mountain Lake">
+    <img src="images/index/slide03.jpg" alt="Forest Path">
+    <div class="slideshow-title">See the World Through My Lens</div>
+    <div class="slideshow-quote active">"Capture the fleeting beauty of a vibrant beach sunset."</div>
+    <div class="slideshow-quote">"Find serenity in the calm of a misty mountain lake."</div>
+    <div class="slideshow-quote">"Wander through the peace of an autumn forest path."</div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
+  <!-- Step-by-Step Gallery Layout -->
+  <section class="gallery-section" id="gallery">
+    <h2>Explore by Category</h2>
 
-    <!-- Nature Images -->
-    <div class="gallery-item">
-      <img src="images/nature/pic01.jpg" alt="Nature 1">
-      <div class="gallery-caption">"Forest breeze."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/nature/pic02.jpg" alt="Nature 2">
-      <div class="gallery-caption">"Calm waters meet blue skies."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/nature/pic03.jpg" alt="Nature 3">
-      <div class="gallery-caption">"Golden trails."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/nature/pic04.jpg" alt="Nature 4">
-      <div class="gallery-caption">"Mountain hush."</div>
+    <div class="category-row">
+      <a href="nature.html">
+        <img src="images/index/category-nature.jpg" alt="Nature">
+      </a>
+      <div class="category-text">
+        <h3>Nature</h3>
+        <p>"Feel the calm of towering trees and flowing rivers."</p>
+      </div>
     </div>
 
-    <!-- Cities Images -->
-    <div class="gallery-item">
-      <img src="images/cities/adrian-schwarz-XS7q-baZrmE-unsplash.jpg" alt="City 1">
-      <div class="gallery-caption">"Urban flow at night."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/cities/paulo-silva-pU2VRZ63EKc-unsplash.jpg" alt="City 2">
-      <div class="gallery-caption">"Streets alive."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/cities/jordan-andrews--g51kA_xq2I-unsplash.jpg" alt="City 3">
-      <div class="gallery-caption">"Skyline moments."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/cities/pedro-lastra-Nyvq2juw4_o-unsplash.jpg" alt="City 4">
-      <div class="gallery-caption">"Concrete dreams."</div>
+    <div class="category-row reverse">
+      <a href="cities.html">
+        <img src="images/index/category-cities.jpg" alt="Cities">
+      </a>
+      <div class="category-text">
+        <h3>Cities</h3>
+        <p>"Experience the vibrant pulse of city life and architecture."</p>
+      </div>
     </div>
 
-    <!-- Portraits Images -->
-    <div class="gallery-item">
-      <img src="images/portraits/ahmed-syed-ZdOSy9_DWWg-unsplash.jpg" alt="Portrait 1">
-      <div class="gallery-caption">"Eyes of thought."</div>
+    <div class="category-row">
+      <a href="portraits.html">
+        <img src="images/index/category-portraits.jpg" alt="Portraits">
+      </a>
+      <div class="category-text">
+        <h3>Portraits</h3>
+        <p>"See emotion, depth, and stories through human expressions."</p>
+      </div>
     </div>
-    <div class="gallery-item">
-      <img src="images/portraits/jack-dong-ZRzgCsW5Dww-unsplash.jpg" alt="Portrait 2">
-      <div class="gallery-caption">"Bold expressions."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/portraits/khashayar-kouchpeydeh-oJAYahafC5A-unsplash.jpg" alt="Portrait 3">
-      <div class="gallery-caption">"Youthful spirit."</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/portraits/richard-jaimes-qf2l_u5W7Jg-unsplash.jpg" alt="Portrait 4">
-      <div class="gallery-caption">"Unfiltered emotion."</div>
+
+    <div class="category-row reverse">
+      <a href="cars.html">
+        <img src="images/index/category-cars.jpg" alt="Cars">
+      </a>
+      <div class="category-text">
+        <h3>Cars</h3>
+        <p>"Unleash adrenaline with machines crafted for speed and power."</p>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <h2>About</h2>
-    <p>This photo gallery captures beauty across nature, city life, and human expressions. Curated for simplicity and elegance.</p>
+  <section class="about-section" id="about">
+    <h2>About Us</h2>
+    <p>Discover and share stunning photography from around the world. Our gallery celebrates the beauty of moments captured through the lens.</p>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <h2>Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+  <div class="lightbox" id="lightbox">
+    <span class="close">×</span>
+    <img class="lightbox-img" src="" alt="Lightbox Image">
+  </div>
 
   <footer>
-    <p>© 2025 Simple Photo Gallery. All rights reserved.</p>
+    <p>© 2025 My Visual Diary. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
