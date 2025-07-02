@@ -1,0 +1,182 @@
+/* ================================
+   Fonts & Global Styling
+================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+h1, h2, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================================
+   Hero Section
+================================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.45);
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+/* ================================
+   Navbar
+================================== */
+.navbar {
+  font-weight: 500;
+}
+
+/* ================================
+   Polaroid-Style Cards
+================================== */
+.polaroid-card {
+  background: #fff;
+  padding: 10px 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.polaroid-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.polaroid-card .caption h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* ================================
+   Modal Polaroid Popup
+================================== */
+.modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.modal-body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 20px;
+  max-width: 500px;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.polaroid .caption {
+  padding: 0 10px;
+  color: #333;
+}
+
+.polaroid h5 {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================================
+   Extra Gallery Peek Style
+================================== */
+.extra-gallery-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.extra-gallery.collapsed {
+  max-height: 180px; /* just enough to peek a little */
+  pointer-events: none;
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.extra-gallery.expanded {
+  max-height: none; /* show all when expanded */
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+}
+
+
+/* ================================
+   Quotes Section
+================================== */
+blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #003DA5;
+}
+
+/* ================================
+   Footer & Contact
+================================== */
+footer {
+  background-color: #6c757d;
+}
+
+footer p, footer a {
+  color: #fff;
+}
+
+/* ================================
+   Theme Variables
+================================== */
+:root {
+  --blue-primary: #003DA5;
+  --yellow-accent: #FFD700;
+  --green-secondary: #2D6A4F;
+  --rust: #B65C4D;
+}
