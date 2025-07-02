@@ -370,7 +370,7 @@
 
         .card-image {
             width: 100%;
-            height: 75%;
+            height: 70%;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -433,37 +433,43 @@
 
         .card-info {
             padding: 20px;
-            height: 25%;
+            height: 30%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
         }
 
         .card-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: white;
+            line-height: 1.2;
         }
 
         .card-genre {
-            font-size: 13px;
-            color: #b3b3b3;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .genre-tag {
-            background: rgba(229, 9, 20, 0.2);
-            color: #ff6b6b;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 11px;
+            background: rgba(229, 9, 20, 0.3);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+            border: 1px solid rgba(229, 9, 20, 0.4);
         }
 
         .carousel-nav {
@@ -823,16 +829,4 @@
                             <div class="card-title">Fullmetal Alchemist</div>
                             <div class="card-genre">
                                 <span class="genre-tag">Adventure</span>
-                                <span class="genre-tag">Military</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image bleach">
-                            <div class="card-overlay">
-                                <button class="play-btn"><i class="fas fa-play"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <div class="card-title">Bleach</div>
-                            <div class="card-genre">
+                                <span class="genre-tag
