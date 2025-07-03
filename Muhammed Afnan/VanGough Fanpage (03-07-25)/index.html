@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vincent van Gogh – Fan Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css?v=2" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Van Gogh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#quotes">Quotes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <video autoplay muted loop id="heroVideo">
+      <source src="videos/vangogh.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="content d-flex flex-column justify-content-center align-items-center h-100 text-white">
+      <h1 class="display-4">Vincent van Gogh</h1>
+      <p class="lead">A Soul Painted in Colors of Emotion</p>
+      <a href="#about" class="btn btn-outline-light mt-3">Discover More</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="images/vangogh.jpeg" alt="Vincent van Gogh" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-md-6">
+          <h2>About Vincent</h2>
+          <p>Vincent van Gogh was a Dutch post-impressionist painter known for his vivid colors, emotional honesty, and bold brushwork. His iconic works like <em>Starry Night</em>, <em>Sunflowers</em>, and <em>The Café Terrace at Night</em> continue to inspire millions around the world.</p>
+          <blockquote class="blockquote">"I dream of painting and then I paint my dream."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Timeline Section -->
+<section id="timeline" class="py-5 position-relative overflow-hidden">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="timeline-bg-video">
+    <source src="videos/timeline_bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container position-relative text-dark">
+    <h2 class="text-center mb-4">Life Timeline</h2>
+
+    <!-- Scrollable Timeline Wrapper -->
+    <div class="timeline-scroll-wrapper p-3">
+      <div class="timeline">
+
+        <!-- Event 1 -->
+        <div class="timeline-item left">
+          <div class="polaroid-card timeline-card">
+            <img src="images/birth_place.jpeg" alt="Birthplace" />
+            <div class="caption">
+              <h5>1853 – Born in Zundert</h5>
+              <p>Vincent van Gogh was born in Zundert, Netherlands. His passion for art started to bloom early in life.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="timeline-item right">
+          <div class="polaroid-card timeline-card">
+            <img src="images/sketches.jpeg" alt="Sketches" />
+            <div class="caption">
+              <h5>1880 – First Steps in Art</h5>
+              <p>After various jobs, he decided to become an artist and started creating charcoal sketches.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="timeline-item left">
+          <div class="polaroid-card timeline-card">
+            <img src="images/bedroom_arles.jpeg" alt="House in Arles" />
+            <div class="caption">
+              <h5>1888 – Moved to Arles</h5>
+              <p>Van Gogh moved to Arles, producing vibrant and colorful works that became central to his legacy.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="timeline-item right">
+          <div class="polaroid-card timeline-card">
+            <img src="images/starry_night.jpeg" alt="Starry Night" />
+            <div class="caption">
+              <h5>1889 – Painted Starry Night</h5>
+              <p>During his stay at the asylum in Saint-Rémy, he painted his most iconic masterpiece — Starry Night.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 5 -->
+        <div class="timeline-item left">
+          <div class="polaroid-card timeline-card">
+            <img src="images/gravestone.jpeg" alt="Gravestone" />
+            <div class="caption">
+              <h5>1890 – Passed Away</h5>
+              <p>Van Gogh died at the age of 37 in Auvers-sur-Oise and was buried beside his brother Theo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 6 -->
+        <div class="timeline-item right">
+          <div class="polaroid-card timeline-card">
+            <img src="images/modern_museum.jpeg" alt="Legacy" />
+            <div class="caption">
+              <h5>Legacy – Immortal Influence</h5>
+              <p>Today, his paintings are globally revered, and his name is immortalized in the history of art.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Gallery Section -->
+<section id="gallery" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Famous Works</h2>
+
+        <!-- Top 3 Paintings -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="polaroid-card tilt-left">
+          <img src="images/starry_night.jpeg" alt="Starry Night" class="img-fluid">
+          <div class="caption"><h5>Starry Night</h5></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="polaroid-card tilt-right">
+          <img src="images/sunflowers.jpeg" alt="Sunflowers" class="img-fluid">
+          <div class="caption"><h5>Sunflowers</h5></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="polaroid-card tilt-left">
+          <img src="images/cafe_terrace.jpeg" alt="Café Terrace at Night" class="img-fluid">
+          <div class="caption"><h5>Café Terrace at Night</h5></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra Gallery Peek -->
+    <div class="extra-gallery-wrapper position-relative mt-3">
+      <div id="extraGallery" class="row g-4 extra-gallery collapsed">
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-right">
+            <img src="images/self_portrait.jpeg" alt="Self Portrait">
+            <div class="caption"><h5>Self Portrait</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-left">
+            <img src="images/bedroom_arles.jpeg" alt="Bedroom in Arles">
+            <div class="caption"><h5>Bedroom in Arles</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-right">
+            <img src="images/irises.jpeg" alt="Irises">
+            <div class="caption"><h5>Irises</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-left">
+            <img src="images/the_red_vineyard.jpeg" alt="The Red Vineyard">
+            <div class="caption"><h5>The Red Vineyard</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-right">
+            <img src="images/olive_trees.jpeg" alt="Olive Trees">
+            <div class="caption"><h5>Olive Trees</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="polaroid-card tilt-left">
+            <img src="images/peach_trees.jpeg" alt="Peach Trees in Blossom">
+            <div class="caption"><h5>Peach Trees in Blossom</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="text-center mt-3">
+      <button id="viewMoreBtn" class="btn btn-outline-dark">View More Works</button>
+      <button id="viewLessBtn" class="btn btn-outline-secondary d-none">View Less</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Quotes Section -->
+  <section id="quotes" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Quotes</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <blockquote class="blockquote">"What would life be if we had no courage to attempt anything?"</blockquote>
+          <blockquote class="blockquote mt-3">"Great things are not done by impulse, but by a series of small things brought together."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2>Stay Inspired</h2>
+      <p>Follow Van Gogh’s legacy on social media</p>
+      <div class="d-flex justify-content-center gap-4 mt-3">
+        <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-secondary text-white">
+    &copy; 2025 Vincent van Gogh Fan Page | Designed by Afnan
+  </footer>
+
+  <!-- Polaroid Modal -->
+  <div class="modal fade" id="polaroidModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body d-flex justify-content-center">
+          <div class="polaroid">
+            <img id="modalImage" src="" alt="">
+            <div class="caption">
+              <h5 id="modalTitle"></h5>
+              <p id="modalDescription">A timeless masterpiece by Van Gogh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

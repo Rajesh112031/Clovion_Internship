@@ -1,0 +1,373 @@
+/* ================================
+   Fonts & Global Styling
+================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+h1, h2, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================================
+   Hero Section
+================================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+#heroVideo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.45);
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+/* ================================
+   Navbar
+================================== */
+.navbar {
+  font-weight: 500;
+}
+
+/* ================================
+   Polaroid-Style Cards
+================================== */
+.polaroid-card {
+  background: #fff;
+  padding: 10px 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 0; /* Sharp edges */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.polaroid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.polaroid-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.polaroid-card .caption h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* ================================
+   Modal Polaroid Popup
+================================== */
+.modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.modal-body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 20px;
+  max-width: 500px;
+  border-radius: 0px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.polaroid .caption {
+  padding: 0 10px;
+  color: #333;
+}
+
+.polaroid h5 {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ================================
+   Extra Gallery Peek Style
+================================== */
+.extra-gallery-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.extra-gallery.collapsed {
+  max-height: 180px; /* just enough to peek a little */
+  pointer-events: none;
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.extra-gallery.expanded {
+  max-height: none; /* show all when expanded */
+  pointer-events: auto;
+  opacity: 1;
+  filter: none;
+}
+
+
+/* ================================
+   Quotes Section
+================================== */
+blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #003DA5;
+}
+
+/* ================================
+   Footer & Contact
+================================== */
+footer {
+  background-color: #6c757d;
+}
+
+footer p, footer a {
+  color: #fff;
+}
+
+/* ================================
+   Theme Variables
+================================== */
+:root {
+  --blue-primary: #003DA5;
+  --yellow-accent: #FFD700;
+  --green-secondary: #2D6A4F;
+  --rust: #B65C4D;
+}
+/* ================================
+   Timeline Layout
+================================== */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+#timeline h2 {
+  color: white;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item.left {
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.timeline-item.right {
+  justify-content: flex-start;
+  left: 50%;
+  padding-left: 30px;
+}
+
+/* Connector line from root to card */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: #aaa;
+  z-index: 2;
+}
+
+.timeline-item.left::after {
+  right: -15px;
+}
+
+.timeline-item.right::after {
+  left: -15px;
+}
+
+/* Card styling with tilt */
+.timeline-card {
+  position: relative;
+  background: #fff;
+  padding: 12px 12px 20px;
+  border: 1px solid #bbb;
+  border-radius: 0; /* Sharp edges */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 320px; /* Increased width */
+}
+
+/* Timeline Card Tilt on Hover */
+.timeline-item.left .timeline-card:hover {
+  transform: rotate(4deg) scale(1.03);
+}
+
+.timeline-item.right .timeline-card:hover {
+  transform: rotate(-4deg) scale(1.03);
+}
+
+
+.timeline-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Tilt cards toward center */
+.timeline-item.left .timeline-card {
+  transform: rotate(2deg);
+}
+
+.timeline-item.right .timeline-card {
+  transform: rotate(-2deg);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding: 2rem 0;
+    flex-direction: row;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 40px;
+    left: 0;
+  }
+
+  .timeline-item::after {
+    left: 0;
+  }
+
+  .timeline-card {
+    margin-left: 1rem;
+    width: 90%;
+    transform: rotate(0);
+  }
+}
+/* ================================
+   Scrollable Timeline Wrapper
+================================== */
+.timeline-scroll-wrapper {
+  max-height: 600px;     /* Adjust this height if needed */
+  overflow-y: auto;
+  padding-right: 12px;
+  margin-top: 1rem;
+  position: relative;
+  scrollbar-width: thin;
+}
+#timeline {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  min-height: 95vh; /* Optional: makes it at least the height of the screen */
+}
+
+
+.timeline-scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.timeline-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+
+.timeline-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+/* ================================
+   Timeline Background Video
+================================== */
+/* Timeline video background */
+.timeline-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Container on top of video */
+#timeline .container {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;  /* Make sure it's transparent */
+  color: white; /* Optional: for visibility */
+}
+
+/* Scroll wrapper background */
+.timeline-scroll-wrapper {
+  max-height: 600px;
+  overflow-y: auto;
+  background: transparent !important;  /* Remove white background */
+  padding: 1rem;
+}
+
+
+
