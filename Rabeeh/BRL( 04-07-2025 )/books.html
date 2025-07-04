@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - LitSphere</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.avif" alt="LitSphere Logo">
+            <h1>LitSphere</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <input type="text" id="search-bar" placeholder="Search books..." class="search-input">
+    </header>
+    <main id="books">
+        <!-- Science Fiction Genre -->
+        <section class="genre-section" data-genre="Science Fiction">
+            <h2 class="section-title">Science Fiction</h2>
+            <div class="book-list">
+                <div class="book-card" data-title="Dune">
+                    <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                    <h3 class="card-title">Dune</h3>
+                    <p class="card-info"><strong>Author:</strong> Frank Herbert</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Dune')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Foundation">
+                    <img src="images/foundation.jpg" alt="Foundation Cover" class="book-cover">
+                    <h3 class="card-title">Foundation</h3>
+                    <p class="card-info"><strong>Author:</strong> Isaac Asimov</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Foundation')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Neuromancer">
+                    <img src="images/neuromancer.jpg" alt="Neuromancer Cover" class="book-cover">
+                    <h3 class="card-title">Neuromancer</h3>
+                    <p class="card-info"><strong>Author:</strong> William Gibson</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Neuromancer')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Snow Crash">
+                    <img src="images/snowcrash.jpg" alt="Snow Crash Cover" class="book-cover">
+                    <h3 class="card-title">Snow Crash</h3>
+                    <p class="card-info"><strong>Author:</strong> Neal Stephenson</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Snow Crash')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Ender's Game">
+                    <img src="images/endersgame.jpg" alt="Ender's Game Cover" class="book-cover">
+                    <h3 class="card-title">Ender's Game</h3>
+                    <p class="card-info"><strong>Author:</strong> Orson Scott Card</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Ender's Game')">View Details</button>
+                </div>
+                <div class="book-card" data-title="The Left Hand of Darkness">
+                    <img src="images/lefthand.jpg" alt="The Left Hand of Darkness Cover" class="book-cover">
+                    <h3 class="card-title">The Left Hand of Darkness</h3>
+                    <p class="card-info"><strong>Author:</strong> Ursula K. Le Guin</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Left Hand of Darkness')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Hyperion">
+                    <img src="images/hyperion.jpg" alt="Hyperion Cover" class="book-cover">
+                    <h3 class="card-title">Hyperion</h3>
+                    <p class="card-info"><strong>Author:</strong> Dan Simmons</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Hyperion')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Do Androids Dream of Electric Sheep?">
+                    <img src="images/androids.jpg" alt="Do Androids Dream Cover" class="book-cover">
+                    <h3 class="card-title">Do Androids Dream of Electric Sheep?</h3>
+                    <p class="card-info"><strong>Author:</strong> Philip K. Dick</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Do Androids Dream of Electric Sheep?')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Stranger in a Strange Land">
+                    <img src="images/stranger.jpg" alt="Stranger in a Strange Land Cover" class="book-cover">
+                    <h3 class="card-title">Stranger in a Strange Land</h3>
+                    <p class="card-info"><strong>Author:</strong> Robert A. Heinlein</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Stranger in a Strange Land')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Martian">
+                    <img src="images/martian.webp" alt="The Martian Cover" class="book-cover">
+                    <h3 class="card-title">The Martian</h3>
+                    <p class="card-info"><strong>Author:</strong> Andy Weir</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Martian')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Project Hail Mary">
+                    <img src="images/hailmary.jpg" alt="Project Hail Mary Cover" class="book-cover">
+                    <h3 class="card-title">Project Hail Mary</h3>
+                    <p class="card-info"><strong>Author:</strong> Andy Weir</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Project Hail Mary')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Brave New World">
+                    <img src="images/brave.webp" alt="Brave New World Cover" class="book-cover">
+                    <h3 class="card-title">Brave New World</h3>
+                    <p class="card-info"><strong>Author:</strong> Aldous Huxley</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Brave New World')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Road">
+                    <img src="images/road.webp" alt="The Road Cover" class="book-cover">
+                    <h3 class="card-title">The Road</h3>
+                    <p class="card-info"><strong>Author:</strong> Cormac McCarthy</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Road')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="I, Robot">
+                    <img src="images/irobot.jpg" alt="I, Robot Cover" class="book-cover">
+                    <h3 class="card-title">I, Robot</h3>
+                    <p class="card-info"><strong>Author:</strong> Isaac Asimov</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('I, Robot')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Time Machine">
+                    <img src="images/timemachine.jpg" alt="The Time Machine Cover" class="book-cover">
+                    <h3 class="card-title">The Time Machine</h3>
+                    <p class="card-info"><strong>Author:</strong> H.G. Wells</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Time Machine')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="1984">
+                    <img src="images/1984.png" alt="1984 Cover" class="book-cover">
+                    <h3 class="card-title">1984</h3>
+                    <p class="card-info"><strong>Author:</strong> George Orwell</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('1984')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Fahrenheit 451">
+                    <img src="images/fahrenheit.jpg" alt="Fahrenheit 451 Cover" class="book-cover">
+                    <h3 class="card-title">Fahrenheit 451</h3>
+                    <p class="card-info"><strong>Author:</strong> Ray Bradbury</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Fahrenheit 451')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Flowers for Algernon">
+                    <img src="images/algernon.jpg" alt="Flowers for Algernon Cover" class="book-cover">
+                    <h3 class="card-title">Flowers for Algernon</h3>
+                    <p class="card-info"><strong>Author:</strong> Daniel Keyes</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Flowers for Algernon')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The War of the Worlds">
+                    <img src="images/warworlds.jpg" alt="The War of the Worlds Cover" class="book-cover">
+                    <h3 class="card-title">The War of the Worlds</h3>
+                    <p class="card-info"><strong>Author:</strong> H.G. Wells</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The War of the Worlds')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="A Canticle for Leibowitz">
+                    <img src="images/canticle.jpg" alt="A Canticle for Leibowitz Cover" class="book-cover">
+                    <h3 class="card-title">A Canticle for Leibowitz</h3>
+                    <p class="card-info"><strong>Author:</strong> Walter M. Miller Jr.</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('A Canticle for Leibowitz')">View Details</button>
+                </div>
+            </div>
+            <button class="see-more-btn btn-primary" data-genre="Science Fiction">See More</button>
+        </section>
+
+        <!-- Fantasy Genre -->
+        <section class="genre-section" data-genre="Fantasy">
+            <h2 class="section-title">Fantasy</h2>
+            <div class="book-list">
+                <div class="book-card" data-title="The Hobbit">
+                    <img src="images/hobbit.jpeg" alt="The Hobbit Cover" class="book-cover">
+                    <h3 class="card-title">The Hobbit</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Hobbit')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Lord of the Rings">
+                    <img src="images/lotr.jpg" alt="Lord of the Rings Cover" class="book-cover">
+                    <h3 class="card-title">Lord of the Rings</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Lord of the Rings')">View Details</button>
+                </div>
+                <div class="book-card" data-title="The Fellowship of the Ring">
+                    <img src="images/fellowship.jpg" alt="The Fellowship of the Ring Cover" class="book-cover">
+                    <h3 class="card-title">The Fellowship of the Ring</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Fellowship of the Ring')">View Details</button>
+                </div>
+                <div class="book-card" data-title="The Two Towers">
+                    <img src="images/towers.jpg" alt="The Two Towers Cover" class="book-cover">
+                    <h3 class="card-title">The Two Towers</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Two Towers')">View Details</button>
+                </div>
+                <div class="book-card" data-title="The Return of the King">
+                    <img src="images/king.jpg" alt="The Return of the King Cover" class="book-cover">
+                    <h3 class="card-title">The Return of the King</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Return of the King')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Harry Potter and the Philosopher's Stone">
+                    <img src="images/philosopher.jpg" alt="Harry Potter and the Philosopher's Stone Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Philosopher's Stone</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Philosopher's Stone')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Harry Potter and the Chamber of Secrets">
+                    <img src="images/chamber.jpg" alt="Harry Potter and the Chamber of Secrets Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Chamber of Secrets')">View Details</button>
+                </div>
+                <div class="book-card" data-title="Harry Potter and the Prisoner of Azkaban">
+                    <img src="images/prisoner.jpg" alt="Harry Potter and the Prisoner of Azkaban Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Prisoner of Azkaban</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Prisoner of Azkaban')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Harry Potter and the Goblet of Fire">
+                    <img src="images/fire.jpg" alt="Harry Potter and the Goblet of Fire Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Goblet of Fire</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Goblet of Fire')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Harry Potter and the Order of the Phoenix">
+                    <img src="images/phoenix.jpg" alt="Harry Potter and the Order of the Phoenix Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Order of the Phoenix</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Order of the Phoenix')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Harry Potter and the Half-Blood Prince">
+                    <img src="images/prince.jpg" alt="Harry Potter and the Half-Blood Prince Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Half-Blood Prince</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Half-Blood Prince')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Harry Potter and the Deathly Hallows">
+                    <img src="images/hallows.jpg" alt="Harry Potter and the Deathly Hallows Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Deathly Hallows</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Deathly Hallows')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Chronicles of Narnia">
+                    <img src="images/narnia.jpg" alt="The Chronicles of Narnia Cover" class="book-cover">
+                    <h3 class="card-title">The Chronicles of Narnia</h3>
+                    <p class="card-info"><strong>Author:</strong> C.S. Lewis</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Chronicles of Narnia')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="A Game of Thrones">
+                    <img src="images/thrones.jpg" alt="A Game of Thrones Cover" class="book-cover">
+                    <h3 class="card-title">A Game of Thrones</h3>
+                    <p class="card-info"><strong>Author:</strong> George R.R. Martin</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('A Game of Thrones')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Night Circus">
+                    <img src="images/circus.jpg" alt="The Night Circus Cover" class="book-cover">
+                    <h3 class="card-title">The Night Circus</h3>
+                    <p class="card-info"><strong>Author:</strong> Erin Morgenstern</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Night Circus')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="Mistborn: The Final Empire">
+                    <img src="images/mistborn.jpg" alt="Mistborn Cover" class="book-cover">
+                    <h3 class="card-title">Mistborn: The Final Empire</h3>
+                    <p class="card-info"><strong>Author:</strong> Brandon Sanderson</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Mistborn: The Final Empire')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Name of the Wind">
+                    <img src="images/namewind.webp" alt="The Name of the Wind Cover" class="book-cover">
+                    <h3 class="card-title">The Name of the Wind</h3>
+                    <p class="card-info"><strong>Author:</strong> Patrick Rothfuss</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Name of the Wind')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Wheel of Time">
+                    <img src="images/wheeloftime.jpg" alt="The Wheel of Time Cover" class="book-cover">
+                    <h3 class="card-title">The Wheel of Time</h3>
+                    <p class="card-info"><strong>Author:</strong> Robert Jordan</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Wheel of Time')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Sword of Truth">
+                    <img src="images/swordtruth.jpg" alt="The Sword of Truth Cover" class="book-cover">
+                    <h3 class="card-title">The Sword of Truth</h3>
+                    <p class="card-info"><strong>Author:</strong> Terry Goodkind</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Sword of Truth')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Lies of Locke Lamora">
+                    <img src="images/lockelamora.jpg" alt="The Lies of Locke Lamora Cover" class="book-cover">
+                    <h3 class="card-title">The Lies of Locke Lamora</h3>
+                    <p class="card-info"><strong>Author:</strong> Scott Lynch</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Lies of Locke Lamora')">View Details</button>
+                </div>
+                <div class="book-card hidden" data-title="The Way of Kings">
+                    <img src="images/waykings.jpg" alt="The Way of Kings Cover" class="book-cover">
+                    <h3 class="card-title">The Way of Kings</h3>
+                    <p class="card-info"><strong>Author:</strong> Brandon Sanderson</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Way of Kings')">View Details</button>
+                </div>
+            </div>
+            <button class="see-more-btn btn-primary" data-genre="Fantasy">See More</button>
+        </section>
+
+        <section class="genre-section" data-genre="Fiction">
+    <h2 class="section-title">Fiction</h2>
+    <div class="book-list">
+        <div class="book-card" data-title="Pride and Prejudice">
+            <img src="images/pride.jpeg" alt="Pride and Prejudice Cover" class="book-cover">
+            <h3 class="card-title">Pride and Prejudice</h3>
+            <p class="card-info"><strong>Author:</strong> Jane Austen</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Pride and Prejudice')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Great Gatsby">
+            <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="book-cover">
+            <h3 class="card-title">The Great Gatsby</h3>
+            <p class="card-info"><strong>Author:</strong> F. Scott Fitzgerald</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Great Gatsby')">View Details</button>
+        </div>
+        <div class="book-card" data-title="To Kill a Mockingbird">
+            <img src="images/mockingbird.webp" alt="To Kill a Mockingbird Cover" class="book-cover">
+            <h3 class="card-title">To Kill a Mockingbird</h3>
+            <p class="card-info"><strong>Author:</strong> Harper Lee</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('To Kill a Mockingbird')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Catcher in the Rye">
+            <img src="images/catcher.jpg" alt="The Catcher in the Rye Cover" class="book-cover">
+            <h3 class="card-title">The Catcher in the Rye</h3>
+            <p class="card-info"><strong>Author:</strong> J.D. Salinger</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Catcher in the Rye')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Of Mice and Men">
+            <img src="images/ofmicemen.jpg" alt="Of Mice and Men Cover" class="book-cover">
+            <h3 class="card-title">Of Mice and Men</h3>
+            <p class="card-info"><strong>Author:</strong> John Steinbeck</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Of Mice and Men')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Sun Also Rises">
+            <img src="images/sunrises.jpg" alt="The Sun Also Rises Cover" class="book-cover">
+            <h3 class="card-title">The Sun Also Rises</h3>
+            <p class="card-info"><strong>Author:</strong> Ernest Hemingway</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Sun Also Rises')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Beloved">
+            <img src="images/beloved.jpg" alt="Beloved Cover" class="book-cover">
+            <h3 class="card-title">Beloved</h3>
+            <p class="card-info"><strong>Author:</strong> Toni Morrison</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Beloved')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Color Purple">
+            <img src="images/colorpurple.jpg" alt="The Color Purple Cover" class="book-cover">
+            <h3 class="card-title">The Color Purple</h3>
+            <p class="card-info"><strong>Author:</strong> Alice Walker</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Color Purple')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="A Farewell to Arms">
+            <img src="images/farewell.jpg" alt="A Farewell to Arms Cover" class="book-cover">
+            <h3 class="card-title">A Farewell to Arms</h3>
+            <p class="card-info"><strong>Author:</strong> Ernest Hemingway</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('A Farewell to Arms')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Their Eyes Were Watching God">
+            <img src="images/theireyes.jpeg" alt="Their Eyes Were Watching God Cover" class="book-cover">
+            <h3 class="card-title">Their Eyes Were Watching God</h3>
+            <p class="card-info"><strong>Author:</strong> Zora Neale Hurston</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Their Eyes Were Watching God')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Grapes of Wrath">
+            <img src="images/grapes.jpeg" alt="The Grapes of Wrath Cover" class="book-cover">
+            <h3 class="card-title">The Grapes of Wrath</h3>
+            <p class="card-info"><strong>Author:</strong> John Steinbeck</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Grapes of Wrath')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Catch-22">
+            <img src="images/catch22.jpg" alt="Catch-22 Cover" class="book-cover">
+            <h3 class="card-title">Catch-22</h3>
+            <p class="card-info"><strong>Author:</strong> Joseph Heller</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Catch-22')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Lord of the Flies">
+            <img src="images/lordflies.jpeg" alt="Lord of the Flies Cover" class="book-cover">
+            <h3 class="card-title">Lord of the Flies</h3>
+            <p class="card-info"><strong>Author:</strong> William Golding</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Lord of the Flies')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Old Man and the Sea">
+            <img src="images/oldmansea.jpg" alt="The Old Man and the Sea Cover" class="book-cover">
+            <h3 class="card-title">The Old Man and the Sea</h3>
+            <p class="card-info"><strong>Author:</strong> Ernest Hemingway</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Old Man and the Sea')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Slaughterhouse-Five">
+            <img src="images/slaughterhouse.jpg" alt="Slaughterhouse-Five Cover" class="book-cover">
+            <h3 class="card-title">Slaughterhouse-Five</h3>
+            <p class="card-info"><strong>Author:</strong> Kurt Vonnegut</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Slaughterhouse-Five')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Invisible Man">
+            <img src="images/invisibleman.jpg" alt="Invisible Man Cover" class="book-cover">
+            <h3 class="card-title">Invisible Man</h3>
+            <p class="card-info"><strong>Author:</strong> Ralph Ellison</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('Invisible Man')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Bell Jar">
+            <img src="images/belljar.jpg" alt="The Bell Jar Cover" class="book-cover">
+            <h3 class="card-title">The Bell Jar</h3>
+            <p class="card-info"><strong>Author:</strong> Sylvia Plath</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Bell Jar')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="A Room with a View">
+            <img src="images/roomview.avif" alt="A Room with a View Cover" class="book-cover">
+            <h3 class="card-title">A Room with a View</h3>
+            <p class="card-info"><strong>Author:</strong> E.M. Forster</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('A Room with a View')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Sound and the Fury">
+            <img src="images/soundfury.jpg" alt="The Sound and the Fury Cover" class="book-cover">
+            <h3 class="card-title">The Sound and the Fury</h3>
+            <p class="card-info"><strong>Author:</strong> William Faulkner</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('The Sound and the Fury')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="As I Lay Dying">
+            <img src="images/asilaydying.jpg" alt="As I Lay Dying Cover" class="book-cover">
+            <h3 class="card-title">As I Lay Dying</h3>
+            <p class="card-info"><strong>Author:</strong> William Faulkner</p>
+            <p class="card-info"><strong>Genre:</strong> Fiction</p>
+            <button class="btn-primary" onclick="showBookDetails('As I Lay Dying')">View Details</button>
+        </div>
+    </div>
+    <button class="see-more-btn btn-primary" data-genre="Fiction">See More</button>
+</section>
+        <section class="genre-section" data-genre="Gothic">
+    <h2 class="section-title">Gothic</h2>
+    <div class="book-list">
+        <div class="book-card" data-title="Frankenstein">
+            <img src="images/frankenstein.jpg" alt="Frankenstein Cover" class="book-cover">
+            <h3 class="card-title">Frankenstein</h3>
+            <p class="card-info"><strong>Author:</strong> Mary Shelley</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Frankenstein')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Dracula">
+            <img src="images/dracula.jpg" alt="Dracula Cover" class="book-cover">
+            <h3 class="card-title">Dracula</h3>
+            <p class="card-info"><strong>Author:</strong> Bram Stoker</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Dracula')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Wuthering Heights">
+            <img src="images/wuthering.jpeg" alt="Wuthering Heights Cover" class="book-cover">
+            <h3 class="card-title">Wuthering Heights</h3>
+            <p class="card-info"><strong>Author:</strong> Emily Brontë</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Wuthering Heights')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Rebecca">
+            <img src="images/rebecca.jpg" alt="Rebecca Cover" class="book-cover">
+            <h3 class="card-title">Rebecca</h3>
+            <p class="card-info"><strong>Author:</strong> Daphne du Maurier</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Rebecca')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Picture of Dorian Gray">
+            <img src="images/doriangray.jpg" alt="The Picture of Dorian Gray Cover" class="book-cover">
+            <h3 class="card-title">The Picture of Dorian Gray</h3>
+            <p class="card-info"><strong>Author:</strong> Oscar Wilde</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Picture of Dorian Gray')">View Details</button>
+        </div>
+        <div class="book-card" data-title="Jane Eyre">
+            <img src="images/janeeyre.jpg" alt="Jane Eyre Cover" class="book-cover">
+            <h3 class="card-title">Jane Eyre</h3>
+            <p class="card-info"><strong>Author:</strong> Charlotte Brontë</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Jane Eyre')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Turn of the Screw">
+            <img src="images/turnofscrew.jpg" alt="The Turn of the Screw Cover" class="book-cover">
+            <h3 class="card-title">The Turn of the Screw</h3>
+            <p class="card-info"><strong>Author:</strong> Henry James</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Turn of the Screw')">View Details</button>
+        </div>
+        <div class="book-card" data-title="The Monk">
+            <img src="images/themonk.jpg" alt="The Monk Cover" class="book-cover">
+            <h3 class="card-title">The Monk</h3>
+            <p class="card-info"><strong>Author:</strong> Matthew Gregory Lewis</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Monk')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Castle of Otranto">
+            <img src="images/otranto.jpg" alt="The Castle of Otranto Cover" class="book-cover">
+            <h3 class="card-title">The Castle of Otranto</h3>
+            <p class="card-info"><strong>Author:</strong> Horace Walpole</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Castle of Otranto')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Mysteries of Udolpho">
+            <img src="images/udolpho.jpg" alt="The Mysteries of Udolpho Cover" class="book-cover">
+            <h3 class="card-title">The Mysteries of Udolpho</h3>
+            <p class="card-info"><strong>Author:</strong> Ann Radcliffe</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Mysteries of Udolpho')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Northanger Abbey">
+            <img src="images/northanger.jpg" alt="Northanger Abbey Cover" class="book-cover">
+            <h3 class="card-title">Northanger Abbey</h3>
+            <p class="card-info"><strong>Author:</strong> Jane Austen</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Northanger Abbey')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Fall of the House of Usher">
+            <img src="images/usher.jpg" alt="The Fall of the House of Usher Cover" class="book-cover">
+            <h3 class="card-title">The Fall of the House of Usher</h3>
+            <p class="card-info"><strong>Author:</strong> Edgar Allan Poe</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Fall of the House of Usher')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Strange Case of Dr Jekyll and Mr Hyde">
+            <img src="images/jekyllhyde.jpg" alt="Dr Jekyll and Mr Hyde Cover" class="book-cover">
+            <h3 class="card-title">The Strange Case of Dr Jekyll and Mr Hyde</h3>
+            <p class="card-info"><strong>Author:</strong> Robert Louis Stevenson</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Strange Case of Dr Jekyll and Mr Hyde')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Haunting of Hill House">
+            <img src="images/hillhouse.jpg" alt="The Haunting of Hill House Cover" class="book-cover">
+            <h3 class="card-title">The Haunting of Hill House</h3>
+            <p class="card-info"><strong>Author:</strong> Shirley Jackson</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Haunting of Hill House')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="We Have Always Lived in the Castle">
+            <img src="images/castle.jpg" alt="We Have Always Lived in the Castle Cover" class="book-cover">
+            <h3 class="card-title">We Have Always Lived in the Castle</h3>
+            <p class="card-info"><strong>Author:</strong> Shirley Jackson</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('We Have Always Lived in the Castle')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Woman in Black">
+            <img src="images/womaninblack.jpg" alt="The Woman in Black Cover" class="book-cover">
+            <h3 class="card-title">The Woman in Black</h3>
+            <p class="card-info"><strong>Author:</strong> Susan Hill</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Woman in Black')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Phantom of the Opera">
+            <img src="images/phantom.jpg" alt="The Phantom of the Opera Cover" class="book-cover">
+            <h3 class="card-title">The Phantom of the Opera</h3>
+            <p class="card-info"><strong>Author:</strong> Gaston Leroux</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Phantom of the Opera')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="Carmilla">
+            <img src="images/carmilla.jpg" alt="Carmilla Cover" class="book-cover">
+            <h3 class="card-title">Carmilla</h3>
+            <p class="card-info"><strong>Author:</strong> Joseph Sheridan Le Fanu</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('Carmilla')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Italian">
+            <img src="images/italian.jpg" alt="The Italian Cover" class="book-cover">
+            <h3 class="card-title">The Italian</h3>
+            <p class="card-info"><strong>Author:</strong> Ann Radcliffe</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Italian')">View Details</button>
+        </div>
+        <div class="book-card hidden" data-title="The Golem">
+            <img src="images/golem.jpg" alt="The Golem Cover" class="book-cover">
+            <h3 class="card-title">The Golem</h3>
+            <p class="card-info"><strong>Author:</strong> Gustav Meyrink</p>
+            <p class="card-info"><strong>Genre:</strong> Gothic</p>
+            <button class="btn-primary" onclick="showBookDetails('The Golem')">View Details</button>
+        </div>
+    </div>
+    <button class="see-more-btn btn-primary" data-genre="Gothic">See More</button>
+</section>
+    <!-- Historical Fiction Genre -->
+    <section class="genre-section" data-genre="Historical Fiction">
+        <h2 class="section-title">Historical Fiction</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="The Book Thief">
+                <img src="images/thief.jpg" alt="The Book Thief Cover" class="book-cover">
+                <h3 class="card-title">The Book Thief</h3>
+                <p class="card-info"><strong>Author:</strong> Markus Zusak</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Book Thief')">View Details</button>
+            </div>
+            <div class="book-card" data-title="All the Light We Cannot See">
+                <img src="images/allthelight.jpg" alt="All the Light We Cannot See Cover" class="book-cover">
+                <h3 class="card-title">All the Light We Cannot See</h3>
+                <p class="card-info"><strong>Author:</strong> Anthony Doerr</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('All the Light We Cannot See')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Nightingale">
+                <img src="images/nightingale.jpg" alt="The Nightingale Cover" class="book-cover">
+                <h3 class="card-title">The Nightingale</h3>
+                <p class="card-info"><strong>Author:</strong> Kristin Hannah</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Nightingale')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Pillars of the Earth">
+                <img src="images/pillarsearth.jpg" alt="The Pillars of the Earth Cover" class="book-cover">
+                <h3 class="card-title">The Pillars of the Earth</h3>
+                <p class="card-info"><strong>Author:</strong> Ken Follett</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Pillars of the Earth')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Gone with the Wind">
+                <img src="images/gonewind.jpg" alt="Gone with the Wind Cover" class="book-cover">
+                <h3 class="card-title">Gone with the Wind</h3>
+                <p class="card-info"><strong>Author:</strong> Margaret Mitchell</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Gone with the Wind')">View Details</button>
+            </div>
+            <div class="book-card" data-title="A Tale of Two Cities">
+                <img src="images/taleoftwocities.jpg" alt="A Tale of Two Cities Cover" class="book-cover">
+                <h3 class="card-title">A Tale of Two Cities</h3>
+                <p class="card-info"><strong>Author:</strong> Charles Dickens</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('A Tale of Two Cities')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Other Boleyn Girl">
+                <img src="images/otherboleyn.jpg" alt="The Other Boleyn Girl Cover" class="book-cover">
+                <h3 class="card-title">The Other Boleyn Girl</h3>
+                <p class="card-info"><strong>Author:</strong> Philippa Gregory</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Other Boleyn Girl')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Help">
+                <img src="images/thehelp.jpg" alt="The Help Cover" class="book-cover">
+                <h3 class="card-title">The Help</h3>
+                <p class="card-info"><strong>Author:</strong> Kathryn Stockett</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Help')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Wolf Hall">
+                <img src="images/wolfhall.jpg" alt="Wolf Hall Cover" class="book-cover">
+                <h3 class="card-title">Wolf Hall</h3>
+                <p class="card-info"><strong>Author:</strong> Hilary Mantel</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Wolf Hall')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Red Tent">
+                <img src="images/redtent.jpg" alt="The Red Tent Cover" class="book-cover">
+                <h3 class="card-title">The Red Tent</h3>
+                <p class="card-info"><strong>Author:</strong> Anita Diamant</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Red Tent')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Memoirs of a Geisha">
+                <img src="images/geisha.jpg" alt="Memoirs of a Geisha Cover" class="book-cover">
+                <h3 class="card-title">Memoirs of a Geisha</h3>
+                <p class="card-info"><strong>Author:</strong> Arthur Golden</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Memoirs of a Geisha')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Name of the Rose">
+                <img src="images/namerose.jpg" alt="The Name of the Rose Cover" class="book-cover">
+                <h3 class="card-title">The Name of the Rose</h3>
+                <p class="card-info"><strong>Author:</strong> Umberto Eco</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Name of the Rose')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="I, Claudius">
+                <img src="images/icla Lucius.jpg" alt="I, Claudius Cover" class="book-cover">
+                <h3 class="card-title">I, Claudius</h3>
+                <p class="card-info"><strong>Author:</strong> Robert Graves</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('I, Claudius')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Paris Library">
+                <img src="images/parislibrary.jpg" alt="The Paris Library Cover" class="book-cover">
+                <h3 class="card-title">The Paris Library</h3>
+                <p class="card-info"><strong>Author:</strong> Janet Skeslien Charles</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Paris Library')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Shadow of the Wind">
+                <img src="images/shadowwind.jpg" alt="The Shadow of the Wind Cover" class="book-cover">
+                <h3 class="card-title">The Shadow of the Wind</h3>
+                <p class="card-info"><strong>Author:</strong> Carlos Ruiz Zafón</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Shadow of the Wind')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Outlander">
+                <img src="images/outlander.jpg" alt="Outlander Cover" class="book-cover">
+                <h3 class="card-title">Outlander</h3>
+                <p class="card-info"><strong>Author:</strong> Diana Gabaldon</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('Outlander')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Historian">
+                <img src="images/historian.jpg" alt="The Historian Cover" class="book-cover">
+                <h3 class="card-title">The Historian</h3>
+                <p class="card-info"><strong>Author:</strong> Elizabeth Kostova</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Historian')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Clan of the Cave Bear">
+                <img src="images/clancavebear.jpg" alt="The Clan of the Cave Bear Cover" class="book-cover">
+                <h3 class="card-title">The Clan of the Cave Bear</h3>
+                <p class="card-info"><strong>Author:</strong> Jean M. Auel</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Clan of the Cave Bear')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Lions of Al-Rassan">
+                <img src="images/lionsalrassan.jpg" alt="The Lions of Al-Rassan Cover" class="book-cover">
+                <h3 class="card-title">The Lions of Al-Rassan</h3>
+                <p class="card-info"><strong>Author:</strong> Guy Gavriel Kay</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Lions of Al-Rassan')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Physician">
+                <img src="images/physician.jpg" alt="The Physician Cover" class="book-cover">
+                <h3 class="card-title">The Physician</h3>
+                <p class="card-info"><strong>Author:</strong> Noah Gordon</p>
+                <p class="card-info"><strong>Genre:</strong> Historical Fiction</p>
+                <button class="btn-primary" onclick="showBookDetails('The Physician')">View Details</button>
+            </div>
+        </div>
+        <button class="see-more-btn btn-primary" data-genre="Historical Fiction">See More</button>
+    </section>
+
+    <!-- Thriller Genre -->
+    <section class="genre-section" data-genre="Thriller">
+        <h2 class="section-title">Thriller</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="The Da Vinci Code">
+                <img src="images/davinci.jpg" alt="The Da Vinci Code Cover" class="book-cover">
+                <h3 class="card-title">The Da Vinci Code</h3>
+                <p class="card-info"><strong>Author:</strong> Dan Brown</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Da Vinci Code')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Gone Girl">
+                <img src="images/gonegirl.jpg" alt="Gone Girl Cover" class="book-cover">
+                <h3 class="card-title">Gone Girl</h3>
+                <p class="card-info"><strong>Author:</strong> Gillian Flynn</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('Gone Girl')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Girl on the Train">
+                <img src="images/girltrain.jpg" alt="The Girl on the Train Cover" class="book-cover">
+                <h3 class="card-title">The Girl on the Train</h3>
+                <p class="card-info"><strong>Author:</strong> Paula Hawkins</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Girl on the Train')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Silence of the Lambs">
+                <img src="images/silence.jpg" alt="The Silence of the Lambs Cover" class="book-cover">
+                <h3 class="card-title">The Silence of the Lambs</h3>
+                <p class="card-info"><strong>Author:</strong> Thomas Harris</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Silence of the Lambs')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Angels & Demons">
+                <img src="images/angelsdemons.jpg" alt="Angels & Demons Cover" class="book-cover">
+                <h3 class="card-title">Angels & Demons</h3>
+                <p class="card-info"><strong>Author:</strong> Dan Brown</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('Angels & Demons')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Bourne Identity">
+                <img src="images/bourneidentity.jpg" alt="The Bourne Identity Cover" class="book-cover">
+                <h3 class="card-title">The Bourne Identity</h3>
+                <p class="card-info"><strong>Author:</strong> Robert Ludlum</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Bourne Identity')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Girl with the Dragon Tattoo">
+                <img src="images/dragontattoo.jpg" alt="The Girl with the Dragon Tattoo Cover" class="book-cover">
+                <h3 class="card-title">The Girl with the Dragon Tattoo</h3>
+                <p class="card-info"><strong>Author:</strong> Stieg Larsson</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Girl with the Dragon Tattoo')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Firm">
+                <img src="images/thefirm.jpg" alt="The Firm Cover" class="book-cover">
+                <h3 class="card-title">The Firm</h3>
+                <p class="card-info"><strong>Author:</strong> John Grisham</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Firm')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Pelican Brief">
+                <img src="images/pelicanbrief.jpg" alt="The Pelican Brief Cover" class="book-cover">
+                <h3 class="card-title">The Pelican Brief</h3>
+                <p class="card-info"><strong>Author:</strong> John Grisham</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Pelican Brief')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Before I Go to Sleep">
+                <img src="images/beforeisleep.jpg" alt="Before I Go to Sleep Cover" class="book-cover">
+                <h3 class="card-title">Before I Go to Sleep</h3>
+                <p class="card-info"><strong>Author:</strong> S.J. Watson</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('Before I Go to Sleep')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Woman in the Window">
+                <img src="images/womanwindow.jpg" alt="The Woman in the Window Cover" class="book-cover">
+                <h3 class="card-title">The Woman in the Window</h3>
+                <p class="card-info"><strong>Author:</strong> A.J. Finn</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Woman in the Window')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Shutter Island">
+                <img src="images/shutterisland.jpg" alt="Shutter Island Cover" class="book-cover">
+                <h3 class="card-title">Shutter Island</h3>
+                <p class="card-info"><strong>Author:</strong> Dennis Lehane</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('Shutter Island')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Hunt for Red October">
+                <img src="images/redoctober.jpg" alt="The Hunt for Red October Cover" class="book-cover">
+                <h3 class="card-title">The Hunt for Red October</h3>
+                <p class="card-info"><strong>Author:</strong> Tom Clancy</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Hunt for Red October')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Night Manager">
+                <img src="images/nightmanager.jpg" alt="The Night Manager Cover" class="book-cover">
+                <h3 class="card-title">The Night Manager</h3>
+                <p class="card-info"><strong>Author:</strong> John le Carré</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Night Manager')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Spy Who Came in from the Cold">
+                <img src="images/spycold.jpg" alt="The Spy Who Came in from the Cold Cover" class="book-cover">
+                <h3 class="card-title">The Spy Who Came in from the Cold</h3>
+                <p class="card-info"><strong>Author:</strong> John le Carré</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Spy Who Came in from the Cold')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Couple Next Door">
+                <img src="images/couplenextdoor.jpg" alt="The Couple Next Door Cover" class="book-cover">
+                <h3 class="card-title">The Couple Next Door</h3>
+                <p class="card-info"><strong>Author:</strong> Shari Lapena</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Couple Next Door')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Big Little Lies">
+                <img src="images/biglittlelies.jpg" alt="Big Little Lies Cover" class="book-cover">
+                <h3 class="card-title">Big Little Lies</h3>
+                <p class="card-info"><strong>Author:</strong> Liane Moriarty</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('Big Little Lies')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Outsider">
+                <img src="images/outsider.jpg" alt="The Outsider Cover" class="book-cover">
+                <h3 class="card-title">The Outsider</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Outsider')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Reversal">
+                <img src="images/reversal.jpg" alt="The Reversal Cover" class="book-cover">
+                <h3 class="card-title">The Reversal</h3>
+                <p class="card-info"><strong>Author:</strong> Michael Connelly</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Reversal')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Guest List">
+                <img src="images/guestlist.jpg" alt="The Guest List Cover" class="book-cover">
+                <h3 class="card-title">The Guest List</h3>
+                <p class="card-info"><strong>Author:</strong> Lucy Foley</p>
+                <p class="card-info"><strong>Genre:</strong> Thriller</p>
+                <button class="btn-primary" onclick="showBookDetails('The Guest List')">View Details</button>
+            </div>
+        </div>
+        <button class="see-more-btn btn-primary" data-genre="Thriller">See More</button>
+    </section>
+
+    <!-- Horror Genre -->
+    <section class="genre-section" data-genre="Horror">
+        <h2 class="section-title">Horror</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="The Shining">
+                <img src="images/shining.jpg" alt="The Shining Cover" class="book-cover">
+                <h3 class="card-title">The Shining</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Shining')">View Details</button>
+            </div>
+            <div class="book-card" data-title="It">
+                <img src="images/it.jpg" alt="It Cover" class="book-cover">
+                <h3 class="card-title">It</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('It')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Dracula">
+                <img src="images/dracula.jpg" alt="Dracula Cover" class="book-cover">
+                <h3 class="card-title">Dracula</h3>
+                <p class="card-info"><strong>Author:</strong> Bram Stoker</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Dracula')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Exorcist">
+                <img src="images/exorcist.jpg" alt="The Exorcist Cover" class="book-cover">
+                <h3 class="card-title">The Exorcist</h3>
+                <p class="card-info"><strong>Author:</strong> William Peter Blatty</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Exorcist')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Pet Sematary">
+                <img src="images/petsematary.jpg" alt="Pet Sematary Cover" class="book-cover">
+                <h3 class="card-title">Pet Sematary</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Pet Sematary')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Salem's Lot">
+                <img src="images/salemslot.jpg" alt="Salem's Lot Cover" class="book-cover">
+                <h3 class="card-title">Salem's Lot</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Salem's Lot')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Frankenstein">
+                <img src="images/frankenstein.jpg" alt="Frankenstein Cover" class="book-cover">
+                <h3 class="card-title">Frankenstein</h3>
+                <p class="card-info"><strong>Author:</strong> Mary Shelley</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Frankenstein')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Haunting of Hill House">
+                <img src="images/hauntinghill.jpg" alt="The Haunting of Hill House Cover" class="book-cover">
+                <h3 class="card-title">The Haunting of Hill House</h3>
+                <p class="card-info"><strong>Author:</strong> Shirley Jackson</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Haunting of Hill House')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="House of Leaves">
+                <img src="images/houseleaves.jpg" alt="House of Leaves Cover" class="book-cover">
+                <h3 class="card-title">House of Leaves</h3>
+                <p class="card-info"><strong>Author:</strong> Mark Z. Danielewski</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('House of Leaves')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Amityville Horror">
+                <img src="images/amityville.jpg" alt="The Amityville Horror Cover" class="book-cover">
+                <h3 class="card-title">The Amityville Horror</h3>
+                <p class="card-info"><strong>Author:</strong> Jay Anson</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Amityville Horror')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Mexican Gothic">
+                <img src="images/mexicangothic.jpg" alt="Mexican Gothic Cover" class="book-cover">
+                <h3 class="card-title">Mexican Gothic</h3>
+                <p class="card-info"><strong>Author:</strong> Silvia Moreno-Garcia</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Mexican Gothic')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Turn of the Screw">
+                <img src="images/turnofscrew.jpg" alt="The Turn of the Screw Cover" class="book-cover">
+                <h3 class="card-title">The Turn of the Screw</h3>
+                <p class="card-info"><strong>Author:</strong> Henry James</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Turn of the Screw')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Carrie">
+                <img src="images/carrie.jpg" alt="Carrie Cover" class="book-cover">
+                <h3 class="card-title">Carrie</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Carrie')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Woman in Black">
+                <img src="images/womanblack.jpg" alt="The Woman in Black Cover" class="book-cover">
+                <h3 class="card-title">The Woman in Black</h3>
+                <p class="card-info"><strong>Author:</strong> Susan Hill</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Woman in Black')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Hell House">
+                <img src="images/hellhouse.jpg" alt="Hell House Cover" class="book-cover">
+                <h3 class="card-title">Hell House</h3>
+                <p class="card-info"><strong>Author:</strong> Richard Matheson</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Hell House')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Dunwich Horror">
+                <img src="images/dunwich.jpg" alt="The Dunwich Horror Cover" class="book-cover">
+                <h3 class="card-title">The Dunwich Horror</h3>
+                <p class="card-info"><strong>Author:</strong> H.P. Lovecraft</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Dunwich Horror')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Call of Cthulhu">
+                <img src="images/cthulhu.jpg" alt="The Call of Cthulhu Cover" class="book-cover">
+                <h3 class="card-title">The Call of Cthulhu</h3>
+                <p class="card-info"><strong>Author:</strong> H.P. Lovecraft</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Call of Cthulhu')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Bird Box">
+                <img src="images/birdbox.jpg" alt="Bird Box Cover" class="book-cover">
+                <h3 class="card-title">Bird Box</h3>
+                <p class="card-info"><strong>Author:</strong> Josh Malerman</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Bird Box')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Stand">
+                <img src="images/thestand.jpg" alt="The Stand Cover" class="book-cover">
+                <h3 class="card-title">The Stand</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('The Stand')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Interview with the Vampire">
+                <img src="images/vampire.jpg" alt="Interview with the Vampire Cover" class="book-cover">
+                <h3 class="card-title">Interview with the Vampire</h3>
+                <p class="card-info"><strong>Author:</strong> Anne Rice</p>
+                <p class="card-info"><strong>Genre:</strong> Horror</p>
+                <button class="btn-primary" onclick="showBookDetails('Interview with the Vampire')">View Details</button>
+            </div>
+        </div>
+        <button class="see-more-btn btn-primary" data-genre="Horror">See More</button>
+    </section>
+
+    <!-- Children's Literature Genre -->
+    <section class="genre-section" data-genre="Children's Literature">
+        <h2 class="section-title">Children's Literature</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="Charlotte's Web">
+                <img src="images/charlotte.jpg" alt="Charlotte's Web Cover" class="book-cover">
+                <h3 class="card-title">Charlotte's Web</h3>
+                <p class="card-info"><strong>Author:</strong> E.B. White</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Charlotte's Web')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Lion, the Witch and the Wardrobe">
+                <img src="images/lionwitch.jpg" alt="The Lion, the Witch and the Wardrobe Cover" class="book-cover">
+                <h3 class="card-title">The Lion, the Witch and the Wardrobe</h3>
+                <p class="card-info"><strong>Author:</strong> C.S. Lewis</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Lion, the Witch and the Wardrobe')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Matilda">
+                <img src="images/matilda.jpg" alt="Matilda Cover" class="book-cover">
+                <h3 class="card-title">Matilda</h3>
+                <p class="card-info"><strong>Author:</strong> Roald Dahl</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Matilda')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The BFG">
+                <img src="images/bfg.jpg" alt="The BFG Cover" class="book-cover">
+                <h3 class="card-title">The BFG</h3>
+                <p class="card-info"><strong>Author:</strong> Roald Dahl</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The BFG')">View Details</button>
+            </div>
+            <div class="book-card" data-title="James and the Giant Peach">
+                <img src="images/giantpeach.jpg" alt="James and the Giant Peach Cover" class="book-cover">
+                <h3 class="card-title">James and the Giant Peach</h3>
+                <p class="card-info"><strong>Author:</strong> Roald Dahl</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('James and the Giant Peach')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Secret Garden">
+                <img src="images/secretgarden.jpg" alt="The Secret Garden Cover" class="book-cover">
+                <h3 class="card-title">The Secret Garden</h3>
+                <p class="card-info"><strong>Author:</strong> Frances Hodgson Burnett</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Secret Garden')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Anne of Green Gables">
+                <img src="images/annegreengables.jpg" alt="Anne of Green Gables Cover" class="book-cover">
+                <h3 class="card-title">Anne of Green Gables</h3>
+                <p class="card-info"><strong>Author:</strong> L.M. Montgomery</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Anne of Green Gables')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Winnie-the-Pooh">
+                <img src="images/winniethepooh.jpg" alt="Winnie-the-Pooh Cover" class="book-cover">
+                <h3 class="card-title">Winnie-the-Pooh</h3>
+                <p class="card-info"><strong>Author:</strong> A.A. Milne</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Winnie-the-Pooh')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Charlie and the Chocolate Factory">
+                <img src="images/charliechocolate.jpg" alt="Charlie and the Chocolate Factory Cover" class="book-cover">
+                <h3 class="card-title">Charlie and the Chocolate Factory</h3>
+                <p class="card-info"><strong>Author:</strong> Roald Dahl</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Charlie and the Chocolate Factory')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Wind in the Willows">
+                <img src="images/windwillows.jpg" alt="The Wind in the Willows Cover" class="book-cover">
+                <h3 class="card-title">The Wind in the Willows</h3>
+                <p class="card-info"><strong>Author:</strong> Kenneth Grahame</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Wind in the Willows')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Peter Pan">
+                <img src="images/peterpan.jpg" alt="Peter Pan Cover" class="book-cover">
+                <h3 class="card-title">Peter Pan</h3>
+                <p class="card-info"><strong>Author:</strong> J.M. Barrie</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Peter Pan')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Tale of Peter Rabbit">
+                <img src="images/peterrabbit.jpg" alt="The Tale of Peter Rabbit Cover" class="book-cover">
+                <h3 class="card-title">The Tale of Peter Rabbit</h3>
+                <p class="card-info"><strong>Author:</strong> Beatrix Potter</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Tale of Peter Rabbit')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Where the Wild Things Are">
+                <img src="images/wildthings.jpg" alt="Where the Wild Things Are Cover" class="book-cover">
+                <h3 class="card-title">Where the Wild Things Are</h3>
+                <p class="card-info"><strong>Author:</strong> Maurice Sendak</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Where the Wild Things Are')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Velveteen Rabbit">
+                <img src="images/velveteen.jpg" alt="The Velveteen Rabbit Cover" class="book-cover">
+                <h3 class="card-title">The Velveteen Rabbit</h3>
+                <p class="card-info"><strong>Author:</strong> Margery Williams</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Velveteen Rabbit')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Giver">
+                <img src="images/thegiver.jpg" alt="The Giver Cover" class="book-cover">
+                <h3 class="card-title">The Giver</h3>
+                <p class="card-info"><strong>Author:</strong> Lois Lowry</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Giver')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Holes">
+                <img src="images/holes.jpg" alt="Holes Cover" class="book-cover">
+                <h3 class="card-title">Holes</h3>
+                <p class="card-info"><strong>Author:</strong> Louis Sachar</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Holes')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Bridge to Terabithia">
+                <img src="images/terabithia.jpg" alt="Bridge to Terabithia Cover" class="book-cover">
+                <h3 class="card-title">Bridge to Terabithia</h3>
+                <p class="card-info"><strong>Author:</strong> Katherine Paterson</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Bridge to Terabithia')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="A Wrinkle in Time">
+                <img src="images/wrinkle.jpg" alt="A Wrinkle in Time Cover" class="book-cover">
+                <h3 class="card-title">A Wrinkle in Time</h3>
+                <p class="card-info"><strong>Author:</strong> Madeleine L'Engle</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('A Wrinkle in Time')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Phantom Tollbooth">
+                <img src="images/phantomtollbooth.jpg" alt="The Phantom Tollbooth Cover" class="book-cover">
+                <h3 class="card-title">The Phantom Tollbooth</h3>
+                <p class="card-info"><strong>Author:</strong> Norton Juster</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('The Phantom Tollbooth')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Tuck Everlasting">
+                <img src="images/tuckeverlasting.jpg" alt="Tuck Everlasting Cover" class="book-cover">
+                <h3 class="card-title">Tuck Everlasting</h3>
+                <p class="card-info"><strong>Author:</strong> Natalie Babbitt</p>
+                <p class="card-info"><strong>Genre:</strong> Children's Literature</p>
+                <button class="btn-primary" onclick="showBookDetails('Tuck Everlasting')">View Details</button>
+            </div>
+        </div>
+        <button class="see-more-btn btn-primary" data-genre="Children's Literature">See More</button>
+    </section>
+
+    <!-- Magical Realism Genre -->
+    <section class="genre-section" data-genre="Magical Realism">
+        <h2 class="section-title">Magical Realism</h2>
+        <div class="book-list">
+            <div class="book-card" data-title="One Hundred Years of Solitude">
+                <img src="images/solitude.jpg" alt="One Hundred Years of Solitude Cover" class="book-cover">
+                <h3 class="card-title">One Hundred Years of Solitude</h3>
+                <p class="card-info"><strong>Author:</strong> Gabriel García Márquez</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('One Hundred Years of Solitude')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Like Water for Chocolate">
+                <img src="images/likewater.jpg" alt="Like Water for Chocolate Cover" class="book-cover">
+                <h3 class="card-title">Like Water for Chocolate</h3>
+                <p class="card-info"><strong>Author:</strong> Laura Esquivel</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Like Water for Chocolate')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Midnight's Children">
+                <img src="images/midnightschildren.jpg" alt="Midnight's Children Cover" class="book-cover">
+                <h3 class="card-title">Midnight's Children</h3>
+                <p class="card-info"><strong>Author:</strong> Salman Rushdie</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Midnight's Children')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The House of the Spirits">
+                <img src="images/houseofspirits.jpg" alt="The House of the Spirits Cover" class="book-cover">
+                <h3 class="card-title">The House of the Spirits</h3>
+                <p class="card-info"><strong>Author:</strong> Isabel Allende</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The House of the Spirits')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Beloved">
+                <img src="images/beloved.jpg" alt="Beloved Cover" class="book-cover">
+                <h3 class="card-title">Beloved</h3>
+                <p class="card-info"><strong>Author:</strong> Toni Morrison</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Beloved')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Master and Margarita">
+                <img src="images/mastermargarita.jpg" alt="The Master and Margarita Cover" class="book-cover">
+                <h3 class="card-title">The Master and Margarita</h3>
+                <p class="card-info"><strong>Author:</strong> Mikhail Bulgakov</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Master and Margarita')">View Details</button>
+            </div>
+            <div class="book-card" data-title="Love in the Time of Cholera">
+                <img src="images/lovecholera.jpg" alt="Love in the Time of Cholera Cover" class="book-cover">
+                <h3 class="card-title">Love in the Time of Cholera</h3>
+                <p class="card-info"><strong>Author:</strong> Gabriel García Márquez</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Love in the Time of Cholera')">View Details</button>
+            </div>
+            <div class="book-card" data-title="The Wind-Up Bird Chronicle">
+                <img src="images/windupbird.jpg" alt="The Wind-Up Bird Chronicle Cover" class="book-cover">
+                <h3 class="card-title">The Wind-Up Bird Chronicle</h3>
+                <p class="card-info"><strong>Author:</strong> Haruki Murakami</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Wind-Up Bird Chronicle')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Kafka on the Shore">
+                <img src="images/kafka.jpg" alt="Kafka on the Shore Cover" class="book-cover">
+                <h3 class="card-title">Kafka on the Shore</h3>
+                <p class="card-info"><strong>Author:</strong> Haruki Murakami</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Kafka on the Shore')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Brief Wondrous Life of Oscar Wao">
+                <img src="images/oscarwao.jpg" alt="The Brief Wondrous Life of Oscar Wao Cover" class="book-cover">
+                <h3 class="card-title">The Brief Wondrous Life of Oscar Wao</h3>
+                <p class="card-info"><strong>Author:</strong> Junot Díaz</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Brief Wondrous Life of Oscar Wao')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Ocean at the End of the Lane">
+                <img src="images/oceanlane.jpg" alt="The Ocean at the End of the Lane Cover" class="book-cover">
+                <h3 class="card-title">The Ocean at the End of the Lane</h3>
+                <p class="card-info"><strong>Author:</strong> Neil Gaiman</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Ocean at the End of the Lane')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Night Circus">
+                <img src="images/nightcircus.jpg" alt="The Night Circus Cover" class="book-cover">
+                <h3 class="card-title">The Night Circus</h3>
+                <p class="card-info"><strong>Author:</strong> Erin Morgenstern</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Night Circus')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="Bless Me, Ultima">
+                <img src="images/blessmeultima.jpg" alt="Bless Me, Ultima Cover" class="book-cover">
+                <h3 class="card-title">Bless Me, Ultima</h3>
+                <p class="card-info"><strong>Author:</strong> Rudolfo Anaya</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('Bless Me, Ultima')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Shadow of the Wind">
+                <img src="images/shadowwind.jpg" alt="The Shadow of the Wind Cover" class="book-cover">
+                <h3 class="card-title">The Shadow of the Wind</h3>
+                <p class="card-info"><strong>Author:</strong> Carlos Ruiz Zafón</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Shadow of the Wind')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Famished Road">
+                <img src="images/famishedroad.jpg" alt="The Famished Road Cover" class="book-cover">
+                <h3 class="card-title">The Famished Road</h3>
+                <p class="card-info"><strong>Author:</strong> Ben Okri</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Famished Road')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Time Traveler's Wife">
+                <img src="images/timetraveler.jpg" alt="The Time Traveler's Wife Cover" class="book-cover">
+                <h3 class="card-title">The Time Traveler's Wife</h3>
+                <p class="card-info"><strong>Author:</strong> Audrey Niffenegger</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Time Traveler's Wife')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Green Mile">
+                <img src="images/greenmile.jpg" alt="The Green Mile Cover" class="book-cover">
+                <h3 class="card-title">The Green Mile</h3>
+                <p class="card-info"><strong>Author:</strong> Stephen King</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Green Mile')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Satanic Verses">
+                <img src="images/satanicverses.jpg" alt="The Satanic Verses Cover" class="book-cover">
+                <h3 class="card-title">The Satanic Verses</h3>
+                <p class="card-info"><strong>Author:</strong> Salman Rushdie</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Satanic Verses')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="The Alchemist">
+                <img src="images/alchemist.jpg" alt="The Alchemist Cover" class="book-cover">
+                <h3 class="card-title">The Alchemist</h3>
+                <p class="card-info"><strong>Author:</strong> Paulo Coelho</p>
+                <p class="card-info"><strong>Genre:</strong> Magical Realism</p>
+                <button class="btn-primary" onclick="showBookDetails('The Alchemist')">View Details</button>
+            </div>
+            <div class="book-card hidden" data-title="A Fine Balance">
+    <img src="https://m.media-amazon.com/images/I/91t3mHJfVSL.jpg" alt="A Fine Balance Cover" class="book-cover">
+    <h3 class="card-title">A Fine Balance</h3>
+    <p class="card-info"><strong>Author:</strong> Rohinton Mistry</p>
+    <p class="card-info"><strong>Genre:</strong> Literary Fiction</p>
+    <button class="btn-primary" onclick="showBookDetails('A Fine Balance')">View Details</button>
+</div>
+        </div>
+        <button class="see-more-btn btn-primary" data-genre="Magical Realism">See More</button>
+    </section>
+    </main>
+    <footer>
+        <div class="footer-column">
+            <h3 class="footer-heading">Social</h3>
+            <a href="https://github.com/RABEEH009" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="footer-link">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <a href="mailto:rabeeh0129@gmail.com" class="footer-link">Email: rabeeh0129@gmail.com</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Legal</h3>
+            <p class="footer-text">Created by Rabeeh © 2025</p>
+        </div>
+    </footer>
+    <div id="book-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <div id="book-details-content"></div>
+        </div>
+    </div>
+    <script src="books.js"></script>
+</body>
+</html>
