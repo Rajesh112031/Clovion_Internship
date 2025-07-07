@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitSphere</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body class="no-js">
+    <header>
+        <div class="logo">
+            <img src="images/logo.avif" alt="LitSphere Logo">
+            <h1>LitSphere</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main id="books">
+        <!-- Science Fiction Genre -->
+        <section class="genre-section" data-genre="Science Fiction">
+            <h2 class="section-title animate">Science Fiction</h2>
+            <div class="book-list">
+                <div class="book-card animate" data-title="Dune">
+                    <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                    <h3 class="card-title">Dune</h3>
+                    <p class="card-info"><strong>Author:</strong> Frank Herbert</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Dune')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="Foundation">
+                    <img src="images/foundation.jpg" alt="Foundation Cover" class="book-cover">
+                    <h3 class="card-title">Foundation</h3>
+                    <p class="card-info"><strong>Author:</strong> Isaac Asimov</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Foundation')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="Neuromancer">
+                    <img src="images/neuromancer.jpg" alt="Neuromancer Cover" class="book-cover">
+                    <h3 class="card-title">Neuromancer</h3>
+                    <p class="card-info"><strong>Author:</strong> William Gibson</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Neuromancer')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="Snow Crash">
+                    <img src="images/snowcrash.jpg" alt="Snow Crash Cover" class="book-cover">
+                    <h3 class="card-title">Snow Crash</h3>
+                    <p class="card-info"><strong>Author:</strong> Neal Stephenson</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Snow Crash')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Ender's Game">
+                    <img src="images/endersgame.jpg" alt="Ender's Game Cover" class="book-cover">
+                    <h3 class="card-title">Ender's Game</h3>
+                    <p class="card-info"><strong>Author:</strong> Orson Scott Card</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Ender's Game')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="The Left Hand of Darkness">
+                    <img src="images/lefthand.jpg" alt="The Left Hand of Darkness Cover" class="book-cover">
+                    <h3 class="card-title">The Left Hand of Darkness</h3>
+                    <p class="card-info"><strong>Author:</strong> Ursula K. Le Guin</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Left Hand of Darkness')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Hyperion">
+                    <img src="images/hyperion.jpg" alt="Hyperion Cover" class="book-cover">
+                    <h3 class="card-title">Hyperion</h3>
+                    <p class="card-info"><strong>Author:</strong> Dan Simmons</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Hyperion')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Do Androids Dream of Electric Sheep?">
+                    <img src="images/androids.jpg" alt="Do Androids Dream Cover" class="book-cover">
+                    <h3 class="card-title">Do Androids Dream of Electric Sheep?</h3>
+                    <p class="card-info"><strong>Author:</strong> Philip K. Dick</p>
+                    <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Do Androids Dream of Electric Sheep?')">View Details</button>
+                </div>
+            </div> 
+            <button class="see-more-btn btn-primary animate" data-genre="Science Fiction">See More</button>
+        </section>
+        <!-- Fantasy Genre -->
+        <section class="genre-section" data-genre="Fantasy">
+            <h2 class="section-title animate">Fantasy</h2>
+            <div class="book-list">
+                <div class="book-card animate" data-title="The Hobbit">
+                    <img src="images/hobbit.jpeg" alt="The Hobbit Cover" class="book-cover">
+                    <h3 class="card-title">The Hobbit</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Hobbit')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="Lord of the Rings">
+                    <img src="images/lotr.jpg" alt="Lord of the Rings Cover" class="book-cover">
+                    <h3 class="card-title">Lord of the Rings</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Lord of the Rings')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="The Fellowship of the Ring">
+                    <img src="images/fellowship.jpg" alt="The Fellowship of the Ring Cover" class="book-cover">
+                    <h3 class="card-title">The Fellowship of the Ring</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Fellowship of the Ring')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="The Two Towers">
+                    <img src="images/towers.jpg" alt="The Two Towers Cover" class="book-cover">
+                    <h3 class="card-title">The Two Towers</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Two Towers')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="The Return of the King">
+                    <img src="images/king.jpg" alt="The Return of the King Cover" class="book-cover">
+                    <h3 class="card-title">The Return of the King</h3>
+                    <p class="card-info"><strong>Author:</strong> J.R.R. Tolkien</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Return of the King')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Harry Potter and the Philosopher's Stone">
+                    <img src="images/philosopher.jpg" alt="Harry Potter and the Philosopher's Stone Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Philosopher's Stone</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Philosopher's Stone')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Harry Potter and the Chamber of Secrets">
+                    <img src="images/chamber.jpg" alt="Harry Potter and the Chamber of Secrets Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Chamber of Secrets</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Chamber of Secrets')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Harry Potter and the Prisoner of Azkaban">
+                    <img src="images/prisoner.jpg" alt="Harry Potter and the Prisoner of Azkaban Cover" class="book-cover">
+                    <h3 class="card-title">Harry Potter and the Prisoner of Azkaban</h3>
+                    <p class="card-info"><strong>Author:</strong> J.K. Rowling</p>
+                    <p class="card-info"><strong>Genre:</strong> Fantasy</p>
+                    <button class="btn-primary" onclick="showBookDetails('Harry Potter and the Prisoner of Azkaban')">View Details</button>
+                </div>
+            </div>
+            <button class="see-more-btn btn-primary animate" data-genre="Fantasy">See More</button>
+        </section>
+        <!-- Fiction Genre -->
+        <section class="genre-section" data-genre="Fiction">
+            <h2 class="section-title animate">Fiction</h2>
+            <div class="book-list">
+                <div class="book-card animate" data-title="Pride and Prejudice">
+                    <img src="images/pride.jpeg" alt="Pride and Prejudice Cover" class="book-cover">
+                    <h3 class="card-title">Pride and Prejudice</h3>
+                    <p class="card-info"><strong>Author:</strong> Jane Austen</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Pride and Prejudice')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="The Great Gatsby">
+                    <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="book-cover">
+                    <h3 class="card-title">The Great Gatsby</h3>
+                    <p class="card-info"><strong>Author:</strong> F. Scott Fitzgerald</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Great Gatsby')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="To Kill a Mockingbird">
+                    <img src="images/mockingbird.webp" alt="To Kill a Mockingbird Cover" class="book-cover">
+                    <h3 class="card-title">To Kill a Mockingbird</h3>
+                    <p class="card-info"><strong>Author:</strong> Harper Lee</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('To Kill a Mockingbird')">View Details</button>
+                </div>
+                <div class="book-card animate" data-title="The Catcher in the Rye">
+                    <img src="images/catcher.jpg" alt="The Catcher in the Rye Cover" class="book-cover">
+                    <h3 class="card-title">The Catcher in the Rye</h3>
+                    <p class="card-info"><strong>Author:</strong> J.D. Salinger</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Catcher in the Rye')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Of Mice and Men">
+                    <img src="images/ofmicemen.jpg" alt="Of Mice and Men Cover" class="book-cover">
+                    <h3 class="card-title">Of Mice and Men</h3>
+                    <p class="card-info"><strong>Author:</strong> John Steinbeck</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Of Mice and Men')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="The Sun Also Rises">
+                    <img src="images/sunrises.jpg" alt="The Sun Also Rises Cover" class="book-cover">
+                    <h3 class="card-title">The Sun Also Rises</h3>
+                    <p class="card-info"><strong>Author:</strong> Ernest Hemingway</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Sun Also Rises')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="Beloved">
+                    <img src="images/beloved.jpg" alt="Beloved Cover" class="book-cover">
+                    <h3 class="card-title">Beloved</h3>
+                    <p class="card-info"><strong>Author:</strong> Toni Morrison</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('Beloved')">View Details</button>
+                </div>
+                <div class="book-card hidden animate" data-title="The Color Purple">
+                    <img src="images/colorpurple.jpg" alt="The Color Purple Cover" class="book-cover">
+                    <h3 class="card-title">The Color Purple</h3>
+                    <p class="card-info"><strong>Author:</strong> Alice Walker</p>
+                    <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                    <button class="btn-primary" onclick="showBookDetails('The Color Purple')">View Details</button>
+                </div>
+            </div>
+            <button class="see-more-btn btn-primary animate" data-genre="Fiction">See More</button>
+        </section>
+        <!-- About Section -->
+        <div id="about" class="about-content">
+            <h2 class="section-title animate">About LitSphere</h2>
+            <img src="images/isolate.jpg" alt="LitSphere Team" class="about-image animate">
+            <p class="content-text animate"><strong>Mission:</strong> LitSphere is a premier online platform dedicated to curating an extensive book reading list, launched on July 1, 2025. Our goal is to connect readers with diverse literary works, leveraging the Google Books API for accurate, up-to-date information.</p>
+            <p class="content-text animate"><strong>Our Team:</strong> Developed by Rabeeh and a skilled team, LitSphere combines modern web technologies—HTML, CSS, and JavaScript—to deliver a responsive, user-friendly experience.</p>
+            <p class="content-text animate"><strong>Vision:</strong> We aim to expand with user reviews, personalized recommendations, and global literary events, making LitSphere the ultimate destination for book lovers worldwide.</p>
+            <div class="image-gallery">
+                <img src="images/about-img-1.webp" alt="About Image 1" class="gallery-image animate">
+                <img src="images/about-img-2.jpeg" alt="About Image 2" class="gallery-image animate">
+                <img src="images/about-img-3.jpg" alt="About Image 3" class="gallery-image animate">
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <div id="contact" class="contact-section">
+            <h2 class="section-title animate">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info animate">
+                    <p class="contact-text"><strong>Email:</strong> <a href="mailto:rabeeh0129@gmail.com" class="contact-link">rabeeh0129@gmail.com</a></p>
+                    <p class="contact-text"><strong>GitHub:</strong> <a href="https://github.com/RABEEH009" target="_blank" class="contact-link">github.com/RABEEH009</a></p>
+                    <p class="contact-text"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="contact-link">linkedin.com/in/rabeeh-n</a></p>
+                </div>
+                <form class="contact-form animate">
+                    <input type="text" placeholder="Your Full Name" class="form-input" required>
+                    <input type="email" placeholder="Your Email Address" class="form-input" required>
+                    <input type="tel" placeholder="Your Phone Number" class="form-input" required>
+                    <button type="submit" class="btn-primary animate">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column">
+            <h3 class="footer-heading">Social</h3>
+            <a href="https://github.com/RABEEH009" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="footer-link">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <a href="mailto:rabeeh0129@gmail.com" class="footer-link">Email: rabeeh0129@gmail.com</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Legal</h3>
+            <p class="footer-text">Created by Rabeeh © 2025</p>
+        </div>
+    </footer>
+    <div id="book-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <div id="book-details-content"></div>
+        </div>
+    </div>
+    <script src="books.js"></script>
+</body>
+</html>
