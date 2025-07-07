@@ -20,6 +20,7 @@
             font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* Enhanced Header */
@@ -66,6 +67,10 @@
             gap: 35px;
         }
 
+        .nav-menu li {
+            position: relative;
+        }
+
         .nav-menu a {
             color: rgba(255,255,255,0.9);
             text-decoration: none;
@@ -94,6 +99,60 @@
 
         .nav-menu a:hover::after {
             width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0,0,0,0.95);
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-menu li:hover .dropdown {
+            display: flex;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(229, 9, 20, 0.3);
+            padding-left: 10px;
+            border-radius: 4px;
+        }
+
+        .dropdown-image {
+            width: 60px;
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        .dropdown-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-genre {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
         }
 
         .user-profile {
@@ -228,6 +287,14 @@
             margin-bottom: 40px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.8);
             color: rgba(255,255,255,0.9);
+            max-width: 500px;
+        }
+
+        .hero-details {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.8);
             max-width: 500px;
         }
 
@@ -447,7 +514,7 @@
             font-weight: 700;
             margin-bottom: 10px;
             color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 4px Nurses(0,0,0,0.8);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -507,7 +574,61 @@
             right: -25px;
         }
 
-        /* Manga Images */
+        /* About Section */
+        .about-section {
+            padding: 60px;
+            background: rgba(0,0,0,0.9);
+            border-radius: 12px;
+            margin: 0 60px 60px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+        }
+
+        .about-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .about-content li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .about-content li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #e50914;
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+
+        /* Manga and Anime Images */
         .one-piece { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
         .demon-slayer { background-image: url('https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&h=600&fit=crop'); }
         .attack-titan { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
@@ -520,6 +641,11 @@
         .fullmetal { background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&h=600&fit=crop'); }
         .bleach { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
         .hunter { background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=600&fit=crop'); }
+        .tokyo-ghoul { background-image: url('https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=600&fit=crop'); }
+        .spy-family { background-image: url('https://images.unsplash.com/photo-1626968545467-7d0c6e56b0f0?w=400&h=600&fit=crop'); }
+        .chainsaw-man { background-image: url('https://images.unsplash.com/photo-1626968545471-7d0c6e56b0f1?w=400&h=600&fit=crop'); }
+        .blue-lock { background-image: url('https://images.unsplash.com/photo-1626968545472-7d0c6e56b0f2?w=400&h=600&fit=crop'); }
+        .haikyuu { background-image: url('https://images.unsplash.com/photo-1626968545473-7d0c6e56b0f3?w=400&h=600&fit=crop'); }
 
         /* Loading Animation */
         .loading-skeleton {
@@ -538,6 +664,9 @@
             .card {
                 min-width: 200px;
                 height: 300px;
+            }
+            .dropdown {
+                width: 250px;
             }
         }
 
@@ -562,12 +691,13 @@
                 font-size: 42px;
             }
             
-            .hero-description {
+            .hero-description, .hero-details {
                 font-size: 16px;
             }
             
-            .content {
+            .content, .about-section {
                 padding: 0 20px;
+                margin: 0 20px 40px;
             }
             
             .card {
@@ -617,14 +747,70 @@
 
     <!-- Header -->
     <header class="header" id="header">
-        <a href="#" class="logo">AnimeFlix</a>
+        <a href="#home" class="logo">AnimeFlix</a>
         <nav>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#manga">Manga</a></li>
-                <li><a href="#anime">Anime</a></li>
-                <li><a href="#trending">Trending</a></li>
-                <li><a href="#mylist">My List</a></li>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#anime">Anime</a>
+                    <div class="dropdown">
+                        <a href="#anime" class="dropdown-item">
+                            <div class="dropdown-image demon-slayer"></div>
+                            <div>
+                                <div class="dropdown-title">Demon Slayer</div>
+                                <div class="dropdown-genre">Action, Supernatural</div>
+                            </div>
+                        </a>
+                        <a href="#anime" class="dropdown-item">
+                            <div class="dropdown-image attack-titan"></div>
+                            <div>
+                                <div class="dropdown-title">Attack on Titan</div>
+                                <div class="dropdown-genre">Action, Drama</div>
+                            </div>
+                        </a>
+                        <a href="#anime" class="dropdown-item">
+                            <div class="dropdown-image jujutsu"></div>
+                            <div>
+                                <div class="dropdown-title">Jujutsu Kaisen</div>
+                                <div class="dropdown-genre">Supernatural, Action</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#trending">Trending</a>
+                    <div class="dropdown">
+                        <a href="#trending" class="dropdown-item">
+                            <div class="dropdown-image my-hero"></div>
+                            <div>
+                                <div class="dropdown-title">My Hero Academia</div>
+                                <div class="dropdown-genre">Superhero, School</div>
+                            </div>
+                        </a>
+                        <a href="#trending" class="dropdown-item">
+                            <div class="dropdown-image naruto"></div>
+                            <div>
+                                <div class="dropdown-title">Naruto</div>
+                                <div class="dropdown-genre">Ninja, Adventure</div>
+                            </div>
+                        </a>
+                        <a href="#trending" class="dropdown-item">
+                            <div class="dropdown-image one-punch"></div>
+                            <div>
+                                <div class="dropdown-title">One Punch Man</div>
+                                <div class="dropdown-genre">Superhero, Comedy</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
             </ul>
         </nav>
         <div class="user-profile">
@@ -637,12 +823,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section (Home) -->
+    <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">New Chapter Available</div>
             <h1 class="hero-title">One Piece</h1>
             <p class="hero-description">Join Monkey D. Luffy and his Straw Hat Pirates as they search for the ultimate treasure, One Piece, in the most epic adventure across the Grand Line.</p>
+            <p class="hero-details">One Piece is a legendary manga and anime series created by Eiichiro Oda, following the adventures of Monkey D. Luffy, a young pirate with a rubber-like body, and his diverse crew, the Straw Hat Pirates. Set in a vast world of oceans and islands, the story revolves around their quest to find the One Piece, the greatest treasure left by the Pirate King, Gol D. Roger. With over 1000 chapters and episodes, the series blends action, adventure, comedy, and heartfelt moments, exploring themes of friendship, freedom, and ambition. Rated 4.9/5 for its intricate world-building and compelling characters.</p>
             <div class="hero-buttons">
                 <a href="#" class="btn btn-play">
                     <i class="fas fa-play"></i> Read Now
@@ -666,10 +853,139 @@
 
     <!-- Content Sections -->
     <main class="content">
-        <!-- Trending Now -->
-        <section class="section">
+        <!-- Popular Anime -->
+        <section class="section" id="anime">
             <h2 class="section-title">
-                <i class="fas fa-fire"></i> Trending Now
+                <i class="fas fa-tv"></i> Popular Anime
+            </h2>
+            <div class="carousel">
+                <button class="carousel-nav prev" onclick="slideCarousel('popular-anime', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-container" id="popular-anime-carousel">
+                    <div class="card">
+                        <div class="card-image demon-slayer">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Demon Slayer</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Supernatural</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image attack-titan">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Attack on Titan</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image my-hero">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">My Hero Academia</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Superhero</span>
+                                <span class="genre-tag">School</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image jujutsu">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Jujutsu Kaisen</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Supernatural</span>
+                                <span class="genre-tag">Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image tokyo-ghoul">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Tokyo Ghoul</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Horror</span>
+                                <span class="genre-tag">Supernatural</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image spy-family">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Spy x Family</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Comedy</span>
+                                <span class="genre-tag">Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image chainsaw-man">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Chainsaw Man</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Horror</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image blue-lock">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Blue Lock</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Sports</span>
+                                <span class="genre-tag">Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav next" onclick="slideCarousel('popular-anime', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Trending Now -->
+        <section class="section" id="trending">
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i> exchanging Now
             </h2>
             <div class="carousel">
                 <button class="carousel-nav prev" onclick="slideCarousel('trending', 'prev')">
@@ -774,7 +1090,7 @@
             </h2>
             <div class="carousel">
                 <button class="carousel-nav prev" onclick="slideCarousel('popular', 'prev')">
-                    <i class="fas fa-chevron-left"></i>
+                    <i class="fas26 fas fa-chevron-left"></i>
                 </button>
                 <div class="carousel-container" id="popular-carousel">
                     <div class="card">
@@ -829,4 +1145,116 @@
                             <div class="card-title">Fullmetal Alchemist</div>
                             <div class="card-genre">
                                 <span class="genre-tag">Adventure</span>
-                                <span class="genre-tag
+                                <span class="genre-tag">Fantasy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image bleach">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Bleach</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Action</span>
+                                <span class="genre-tag">Supernatural</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image hunter">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Hunter x Hunter</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Adventure</span>
+                                <span class="genre-tag">Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image haikyuu">
+                            <div class="card-overlay">
+                                <button class="play-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">Haikyuu!!</div>
+                            <div class="card-genre">
+                                <span class="genre-tag">Sports</span>
+                                <span class="genre-tag">Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav next" onclick="slideCarousel('popular', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <h2>About AnimeFlix</h2>
+                <p>AnimeFlix is your ultimate destination for anime and manga streaming, offering a vast library of iconic series like Demon Slayer, Attack on Titan, and One Piece. Dive into thrilling adventures, supernatural battles, and heartwarming stories from the world of anime, all in one place.</p>
+                <ul>
+                    <li>Extensive library with thousands of anime episodes and manga chapters.</li>
+                    <li>High-quality streaming with minimal buffering and crisp visuals.</li>
+                    <li>Regular updates with the latest chapters and episodes as soon as they release.</li>
+                    <li>User-friendly interface designed for seamless navigation across devices.</li>
+                    <li>Exclusive content and early access for premium subscribers.</li>
+                </ul>
+                <p>Join our community of anime enthusiasts and experience storytelling like never before. Whether you're a fan of action-packed shonen or heartwarming slice-of-life, AnimeFlix has something for everyone.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Carousel Functionality
+        function slideCarousel(carouselId, direction) {
+            const container = document.getElementById(carouselId + '-carousel');
+            const cards = container.querySelectorAll('.card');
+            const cardWidth = cards[0].offsetWidth + 15; // Card width + gap
+            let currentTransform = parseFloat(getComputedStyle(container).transform.split(',')[4]) || 0;
+
+            if (direction === 'next') {
+                currentTransform -= cardWidth * 3; // Slide 3 cards at a time
+                if (Math.abs(currentTransform) + container.parentElement.offsetWidth > container.scrollWidth) {
+                    currentTransform = -(container.scrollWidth - container.parentElement.offsetWidth);
+                }
+            } else {
+                currentTransform += cardWidth * 3;
+                if (currentTransform > 0) {
+                    currentTransform = 0;
+                }
+            }
+
+            container.style.transform = `translateX(${currentTransform}px)`;
+        }
+    </script>
+</body>
+</html>
