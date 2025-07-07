@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="More movie reviews at Deepakdev Reviews." />
+  <meta name="keywords" content="movie reviews, film critiques, Deepakdev Reviews" />
+  <title>Reviews - Deepakdev Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #0f2027);
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    header {
+      background-color: #0f2027;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 500;
+    }
+
+    .search-bar input {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+
+    .reviews-section {
+      padding: 50px 20px;
+      color: white;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .reviews-section h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .category-filter {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .category-filter label,
+    .category-filter select {
+      font-size: 1em;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #ffffff10;
+      color: #fff;
+      border: none;
+    }
+
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .movie-tile {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .movie-tile:hover {
+      transform: scale(1.03);
+    }
+
+    .movie-tile img {
+      width: 100%;
+      border-radius: 10px;
+      max-height: 280px;
+      object-fit: cover;
+    }
+
+    .movie-title {
+      margin-top: 15px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .rating {
+      margin-top: 5px;
+      color: #ffc107;
+      font-size: 0.95em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0f2027;
+      color: #ccc;
+      margin-top: 50px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>FlickPulse</h1>
+    <div class="header-right">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search movies..." />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="reviews-section">
+      <h2>Discover Cinematic Wonders</h2>
+
+      <div class="category-filter">
+        <label for="category-select">Filter by Category:</label>
+        <select id="category-select">
+          <option value="">All Categories</option>
+          <option value="Action">Action</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Animation">Animation</option>
+          <option value="Biography">Biography</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Crime">Crime</option>
+          <option value="Drama">Drama</option>
+          <option value="Family">Family</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="History">History</option>
+          <option value="Romance">Romance</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Thriller">Thriller</option>
+        </select>
+      </div>
+
+<div class="movie-grid">
+  <div class="movie-tile">
+    <img src="images/inception.png" alt="Inception">
+    <div class="movie-title">Inception</div>
+    <div class="rating">⭐ 4.5/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/interstellar.png" alt="Interstellar">
+    <div class="movie-title">Interstellar</div>
+    <div class="rating">⭐ 4.8/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/dark-knight.jpg" alt="The Dark Knight">
+    <div class="movie-title">The Dark Knight</div>
+    <div class="rating">⭐ 4.7/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/avatar.jpg" alt="Avatar">
+    <div class="movie-title">Avatar</div>
+    <div class="rating">⭐ 4.2/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/oppenheimer.jpg" alt="Oppenheimer">
+    <div class="movie-title">Oppenheimer</div>
+    <div class="rating">⭐ 4.6/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/The Matrix.jpg" alt="The Matrix">
+    <div class="movie-title">The Matrix</div>
+    <div class="rating">⭐ 4.6/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/The Lord of the Rings.jpg" alt="The Lord of the Rings">
+    <div class="movie-title">The Fellowship of the Ring</div>
+    <div class="rating">⭐ 4.7/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/Titanic.jpg" alt="Titanic">
+    <div class="movie-title">Titanic</div>
+    <div class="rating">⭐ 4.3/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/The Shawshank Redemption.jpg" alt="The Shawshank Redemption">
+    <div class="movie-title">The Shawshank Redemption</div>
+    <div class="rating">⭐ 4.9/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/Pulp Fiction.jpg" alt="Pulp Fiction">
+    <div class="movie-title">Pulp Fiction</div>
+    <div class="rating">⭐ 4.6/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/The Godfather.jpg" alt="The Godfather">
+    <div class="movie-title">The Godfather</div>
+    <div class="rating">⭐ 4.9/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/Fight Club.jpg" alt="Fight Club">
+    <div class="movie-title">Fight Club</div>
+    <div class="rating">⭐ 4.7/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/Forrest Gump.jpg" alt="Forrest Gump">
+    <div class="movie-title">Forrest Gump</div>
+    <div class="rating">⭐ 4.6/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/Gladiator.png" alt="Gladiator">
+    <div class="movie-title">Gladiator</div>
+    <div class="rating">⭐ 4.5/5</div>
+  </div>
+  <div class="movie-tile">
+    <img src="images/The Lion King.webp" alt="The Lion King">
+    <div class="movie-title">The Lion King</div>
+    <div class="rating">⭐ 4.4/5</div>
+  </div>
+</div>
+
+        <!-- You can add more movie cards here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Deepakdev Movie Reviews. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>
