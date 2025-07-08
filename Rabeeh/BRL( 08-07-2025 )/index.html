@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitSphere</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="no-js">
+    <header>
+        <div class="logo">
+            <img src="images/logo.avif" alt="LitSphere Logo">
+            <h1>LitSphere</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="books.html">Books</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main id="home">
+        <div class="banner">
+            <div class="banner-image active" style="background-image: url('images/welcome-banner.jpg');"></div>
+            <div class="banner-image" style="background-image: url('images/banner1.webp');"></div>
+            <div class="banner-image" style="background-image: url('images/banner3.png');"></div>
+            <div class="banner-image" style="background-image: url('images/banner2.jpg');"></div>
+            <div class="banner-overlay">
+                <h2 class="banner-title animate">Embark on a Literary Odyssey</h2>
+                <p class="banner-subtitle animate">Explore a universe of books, from timeless classics to modern masterpieces.</p>
+                <p class="banner-note animate">Dive into stories that ignite imagination, spark curiosity, and connect you to the heart of human experience.</p>
+            </div>
+        </div>
+        <div class="intro-section">
+            <h2 class="section-title intro-title animate">Discover the World of Literature</h2>
+            <div class="intro-content">
+                <p class="intro-text animate">At LitSphere, we are passionate about bringing the joy of reading to everyone. Launched on July 1, 2025, our platform is designed to cater to book lovers of all ages and interests, offering a curated selection that spans genres, cultures, and eras. Whether you're seeking a gripping thriller, a heartfelt romance, or a thought-provoking non-fiction work, LitSphere is your gateway to endless stories.</p>
+                <p class="intro-text animate">Our mission goes beyond just providing books; we aim to foster a community where readers can share insights, discover new authors, and deepen their appreciation for literature. With seamless integration of the Google Books API, we ensure that our catalog is always up-to-date with the latest releases and timeless classics alike. This dedication to quality and variety sets us apart in the digital reading landscape.</p>
+                <p class="intro-text animate">Explore our features, including detailed book summaries, author profiles, and personalized recommendations as we grow. LitSphere is more than a website—it’s a celebration of the written word, inviting you to lose yourself in pages that inspire, challenge, and entertain. Join us on this literary journey and let’s turn the page together!</p>
+            </div>
+        </div>
+        <div class="book-slider-section">
+            <div class="book-slider">
+                <img src="images/dune.jpg" alt="Dune Cover" class="slider-book animate">
+                <img src="images/foundation.jpg" alt="Foundation Cover" class="slider-book animate">
+                <img src="images/1984.png" alt="1984 Cover" class="slider-book animate">
+                <img src="images/ofmicemen.jpg" alt="Of Mice and Men Cover" class="slider-book animate">
+                <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="slider-book animate">
+                <img src="images/beloved.jpg" alt="Beloved Cover" class="slider-book animate">
+                <img src="images/lotr.jpg" alt="Lord of the Rings Cover" class="slider-book animate">
+                <img src="images/catcher.jpg" alt="The Catcher in the Rye Cover" class="slider-book animate">
+                <img src="images/dune.jpg" alt="Dune Cover" class="slider-book animate">
+                <img src="images/foundation.jpg" alt="Foundation Cover" class="slider-book animate">
+                <img src="images/1984.png" alt="1984 Cover" class="slider-book animate">
+                <img src="images/ofmicemen.jpg" alt="Of Mice and Men Cover" class="slider-book animate">
+            </div>
+        </div>
+        <div class="features-section">
+            <h2 class="section-title animate">Our Features</h2>
+            <div class="features-container">
+                <div class="feature-box animate left">
+                    <h3>Curated Book Lists</h3>
+                    <p>Explore hand-picked collections across genres, updated regularly with the latest releases.</p>
+                </div>
+                <div class="feature-box animate right">
+                    <h3>Personalized Recommendations</h3>
+                    <p>Get tailored book suggestions based on your reading preferences and history.</p>
+                </div>
+                <div class="feature-box animate left">
+                    <h3>Community Insights</h3>
+                    <p>Join discussions, share reviews, and connect with fellow book lovers worldwide.</p>
+                </div>
+                <div class="feature-box animate right">
+                    <h3>Literary Events</h3>
+                    <p>Stay updated on global book fairs, author talks, and exclusive LitSphere events.</p>
+                </div>
+            </div>
+        </div>
+        <div class="book-list-section">
+            <h2 class="section-title animate">Latest Updates</h2>
+            <div class="book-list">
+                <div class="book-card animate" data-title="Dune">
+                    <div class="book-details">
+                        <h3 class="card-title">Dune</h3>
+                        <p class="card-info"><strong>Author:</strong> Frank Herbert</p>
+                        <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                        <p class="card-info"><strong>Published:</strong> 1965</p>
+                        <p class="card-info"><strong>Description:</strong> Set on the desert planet Arrakis, <i>Dune</i> follows young Paul Atreides as his family navigates a complex web of intrigue and power. This epic blends themes of ecology, politics, and human potential, exploring destiny and survival in a harsh universe. Herbert’s richly detailed world captivates with its intricate lore and philosophical depth.</p>
+                        <button class="btn-primary" onclick="showBookDetails('Dune')">View Details</button>
+                    </div>
+                    <img src="images/dune.jpg" alt="Dune Cover" class="book-cover">
+                </div>
+                <div class="book-card animate" data-title="Foundation">
+                    <img src="images/foundation.jpg" alt="Foundation Cover" class="book-cover">
+                    <div class="book-details">
+                        <h3 class="card-title">Foundation</h3>
+                        <p class="card-info"><strong>Author:</strong> Isaac Asimov</p>
+                        <p class="card-info"><strong>Genre:</strong> Science Fiction</p>
+                        <p class="card-info"><strong>Published:</strong> 1951</p>
+                        <p class="card-info"><strong>Description:</strong> <i>Foundation</i> chronicles the decline of a galactic empire through the lens of psychohistory, a science predicting societal trends. Hari Seldon’s plan to shorten an impending dark age unfolds across centuries, blending intellectual rigor with thrilling narrative. Asimov’s masterpiece remains a cornerstone of speculative fiction.</p>
+                        <button class="btn-primary" onclick="showBookDetails('Foundation')">View Details</button>
+                    </div>
+                </div>
+                <div class="book-card animate" data-title="1984">
+                    <div class="book-details">
+                        <h3 class="card-title">1984</h3>
+                        <p class="card-info"><strong>Author:</strong> George Orwell</p>
+                        <p class="card-info"><strong>Genre:</strong> Dystopian</p>
+                        <p class="card-info"><strong>Published:</strong> 1949</p>
+                        <p class="card-info"><strong>Description:</strong> In a totalitarian world, <i>1984</i> depicts Winston Smith’s struggle against an oppressive regime that controls thought and truth. Orwell’s chilling vision of surveillance, propaganda, and psychological manipulation remains a powerful warning about the erosion of freedom and individuality.</p>
+                        <button class="btn-primary" onclick="showBookDetails('1984')">View Details</button>
+                    </div>
+                    <img src="images/1984.png" alt="1984 Cover" class="book-cover">
+                </div>
+                <div class="book-card animate" data-title="The Great Gatsby">
+                    <img src="images/gatsby.jpg" alt="The Great Gatsby Cover" class="book-cover">
+                    <div class="book-details">
+                        <h3 class="card-title">The Great Gatsby</h3>
+                        <p class="card-info"><strong>Author:</strong> F. Scott Fitzgerald</p>
+                        <p class="card-info"><strong>Genre:</strong> Fiction</p>
+                        <p class="card-info"><strong>Published:</strong> 1925</p>
+                        <p class="card-info"><strong>Description:</strong> Set in the Jazz Age, <i>The Great Gatsby</i> follows the enigmatic Jay Gatsby’s pursuit of the elusive Daisy Buchanan. Fitzgerald’s lyrical prose captures the hollow allure of wealth and the American Dream, crafting a timeless tragedy of love, ambition, and disillusionment.</p>
+                        <button class="btn-primary" onclick="showBookDetails('The Great Gatsby')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reading-insight">
+            <h2 class="section-title animate">The Joy of Reading</h2>
+            <div class="insight-container">
+                <div class="insight-content">
+                    <p class="insight-text animate">Books are more than just pages—they are portals to new worlds, offering wisdom, adventure, and inspiration. Reading nurtures empathy by allowing us to walk in others’ shoes, sharpens our minds through critical thinking, and connects us across cultures with shared human experiences. At LitSphere, we celebrate this transformative power, curating a diverse collection that spans centuries and continents.</p>
+                    <p class="insight-text animate">The act of reading can be a personal retreat or a communal celebration. Whether you're delving into the intricate plots of a mystery novel or savoring the lyrical prose of a classic, each book offers a unique journey. LitSphere enhances this experience with detailed summaries, author insights, and a community space where readers can discuss and recommend their favorites, making every reading session more enriching.</p>
+                    <p class="insight-text animate">Our platform encourages a lifelong love for literature, from children discovering their first stories to adults exploring philosophical treatises. With features like personalized reading lists and upcoming literary events, LitSphere aims to be your companion in this endless adventure, ensuring that the joy of reading remains a vibrant part of your life.</p>
+                </div>
+                <img src="images/read-img-2.webp" alt="Reading Insight" class="insight-image animate">
+            </div>
+        </div>
+        <div class="contributions-section">
+            <h2 class="section-title animate">Our Contributions</h2>
+            <div class="contributions-container">
+                <div class="contribution-box animate left">
+                    <h3>Total Books Curated</h3>
+                    <p>Over 10,000 books from various genres, updated daily via Google Books API.</p>
+                </div>
+                <div class="contribution-box animate right">
+                    <h3>Community Engagement</h3>
+                    <p>Hosted 50+ virtual book discussions and author Q&A sessions in 2025.</p>
+                </div>
+                <div class="contribution-box animate left">
+                    <h3>Global Reach</h3>
+                    <p>Connecting readers from 20+ countries with localized book recommendations.</p>
+                </div>
+                <div class="contribution-box animate right">
+                    <h3>Educational Impact</h3>
+                    <p>Partnered with 10 schools to promote literacy among young readers.</p>
+                </div>
+            </div>
+        </div>
+        <h2 class="section-title animate">Timeless Literary Treasures</h2>
+        <p class="college-quote animate">“A great book should leave you with many experiences, and slightly exhausted at the end. You live several lives while reading.” – William Styron</p>
+        <p class="college-quote animate">These iconic covers represent stories that have shaped generations, inviting readers to explore worlds of wonder, challenge societal norms, and reflect on the human condition. Let these timeless treasures inspire your next literary adventure.</p>
+        <div class="college-image">
+            <div class="college-image-slider">
+                <img src="images/img2.webp" alt="College Style 1" class="college-img animate">
+                <img src="images/img1.jpg" alt="College Style 2" class="college-img animate">
+                <img src="images/img3.jpg" alt="College Style 3" class="college-img animate">
+                <img src="images/img2.webp" alt="College Style 1" class="college-img animate">
+                <img src="images/img1.jpg" alt="College Style 2" class="college-img animate">
+                <img src="images/img3.jpg" alt="College Style 3" class="college-img animate">
+                <img src="images/img2.webp" alt="College Style 1" class="college-img animate">
+                <img src="images/img1.jpg" alt="College Style 2" class="college-img animate">
+                <img src="images/img3.jpg" alt="College Style 3" class="college-img animate">
+                <img src="images/img2.webp" alt="College Style 1" class="college-img animate">
+                <img src="images/img1.jpg" alt="College Style 2" class="college-img animate">
+                <img src="images/img3.jpg" alt="College Style 3" class="college-img animate">
+            </div>
+        </div>
+        <div class="author-insight">
+            <h2 class="section-title animate">Authors Shaping Literary Legacy</h2>
+            <p class="insight-text animate">LitSphere honors the visionaries who have shaped the literary world with their groundbreaking works. From Frank Herbert’s ecological epics in the Dune series to J.R.R. Tolkien’s mythical realms in The Lord of the Rings, these authors have left an indelible mark on global literature, inspiring readers and writers alike with their creativity and depth.</p>
+            <p class="insight-text animate">Each author brings a unique perspective, whether it’s George Orwell’s cautionary tales of dystopia, Jane Austen’s insightful explorations of human relationships, or Paulo Coelho’s philosophical journeys. Their stories transcend time, offering lessons in resilience, love, and the human condition, and LitSphere is proud to showcase their contributions through detailed profiles and curated selections.</p>
+            <p class="insight-text animate">As we expand, LitSphere will continue to celebrate these literary giants and emerging talents, providing a platform for their works to reach new audiences. Join us in recognizing their legacy, and explore how their narratives continue to influence modern storytelling and cultural discourse worldwide.</p>
+        </div>
+        <div class="author-list">
+            <div class="author-card animate" data-name="Frank Herbert">
+                <img src="images/author1.jpg" alt="Frank Herbert" class="author-image">
+                <h3 class="author-name">Frank Herbert</h3>
+                <p class="author-desc">Known for Dune series, a groundbreaking science fiction saga.</p>
+            </div>
+            <div class="author-card animate" data-name="J.R.R. Tolkien">
+                <img src="images/author2.jpg" alt="J.R.R. Tolkien" class="author-image">
+                <h3 class="author-name">J.R.R. Tolkien</h3>
+                <p class="author-desc">Master of Middle-earth sagas, creator of The Lord of the Rings.</p>
+            </div>
+            <div class="author-card animate" data-name="George Orwell">
+                <img src="images/author3.jpg" alt="George Orwell" class="author-image">
+                <h3 class="author-name">George Orwell</h3>
+                <p class="author-desc">Author of dystopian classics like 1984 and Animal Farm.</p>
+            </div>
+            <div class="author-card animate" data-name="Jane Austen">
+                <img src="images/author4.jpeg" alt="Jane Austen" class="author-image">
+                <h3 class="author-name">Jane Austen</h3>
+                <p class="author-desc">Renowned for romantic novels like Pride and Prejudice.</p>
+            </div>
+            <div class="author-card animate" data-name="F. Scott Fitzgerald">
+                <img src="images/author5.jpg" alt="F. Scott Fitzgerald" class="author-image">
+                <h3 class="author-name">F. Scott Fitzgerald</h3>
+                <p class="author-desc">Chronicler of the Jazz Age with works like The Great Gatsby.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Harper Lee">
+                <img src="images/author6.jpg" alt="Harper Lee" class="author-image">
+                <h3 class="author-name">Harper Lee</h3>
+                <p class="author-desc">Author of Southern literature classic To Kill a Mockingbird.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="J.D. Salinger">
+                <img src="images/author7.jpg" alt="J.D. Salinger" class="author-image">
+                <h3 class="author-name">J.D. Salinger</h3>
+                <p class="author-desc">Known for youthful narratives like The Catcher in the Rye.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Cormac McCarthy">
+                <img src="images/author8.jpg" alt="Cormac McCarthy" class="author-image">
+                <h3 class="author-name">Cormac McCarthy</h3>
+                <p class="author-desc">Master of bleak fiction with The Road and Blood Meridian.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Mary Shelley">
+                <img src="images/author9.jpg" alt="Mary Shelley" class="author-image">
+                <h3 class="author-name">Mary Shelley</h3>
+                <p class="author-desc">Pioneer of Gothic tales with Frankenstein.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Paulo Coelho">
+                <img src="images/author10.jpg" alt="Paulo Coelho" class="author-image">
+                <h3 class="author-name">Paulo Coelho</h3>
+                <p class="author-desc">Author of philosophical works like The Alchemist.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Aldous Huxley">
+                <img src="images/author11.jpg" alt="Aldous Huxley" class="author-image">
+                <h3 class="author-name">Aldous Huxley</h3>
+                <p class="author-desc">Famous for dystopian vision in Brave New World.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="C.S. Lewis">
+                <img src="images/author12.jpeg" alt="C.S. Lewis" class="author-image">
+                <h3 class="author-name">C.S. Lewis</h3>
+                <p class="author-desc">Creator of The Chronicles of Narnia series.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="E.B. White">
+                <img src="images/author13.jpg" alt="E.B. White" class="author-image">
+                <h3 class="author-name">E.B. White</h3>
+                <p class="author-desc">Beloved for children’s classic Charlotte's Web.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Stephen King">
+                <img src="images/author14.jpg" alt="Stephen King" class="author-image">
+                <h3 class="author-name">Stephen King</h3>
+                <p class="author-desc">Master of horror with The Shining and more.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Dan Brown">
+                <img src="images/author15.jpg" alt="Dan Brown" class="author-image">
+                <h3 class="author-name">Dan Brown</h3>
+                <p class="author-desc">Thriller writer known for The Da Vinci Code.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Gabriel García Márquez">
+                <img src="images/author16.jpg" alt="Gabriel García Márquez" class="author-image">
+                <h3 class="author-name">Gabriel García Márquez</h3>
+                <p class="author-desc">Master of magical realism with One Hundred Years of Solitude.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Toni Morrison">
+                <img src="images/author17.jpg" alt="Toni Morrison" class="author-image">
+                <h3 class="author-name">Toni Morrison</h3>
+                <p class="author-desc">Renowned for powerful novels like Beloved.</p>
+            </div>
+            <div class="author-card hidden animate" data-name="Ray Bradbury">
+                <img src="images/author18.jpg" alt="Ray Bradbury" class="author-image">
+                <h3 class="author-name">Ray Bradbury</h3>
+                <p class="author-desc">Author of visionary sci-fi like Fahrenheit 451.</p>
+            </div>
+        </div>
+        <button id="see-more-authors-btn" class="btn-primary animate">See More Authors</button>
+        <div id="about" class="about-content">
+            <h2 class="section-title animate">About LitSphere</h2>
+            <img src="images/isolate.jpg" alt="LitSphere Team" class="about-image animate">
+            <p class="content-text animate"><strong>Mission:</strong> LitSphere is a premier online platform dedicated to curating an extensive book reading list, launched on July 1, 2025. Our goal is to connect readers with diverse literary works, leveraging the Google Books API for accurate, up-to-date information.</p>
+            <p class="content-text animate"><strong>Our Team:</strong> Developed by Rabeeh and a skilled team, LitSphere combines modern web technologies—HTML, CSS, and JavaScript—to deliver a responsive, user-friendly experience.</p>
+            <p class="content-text animate"><strong>Vision:</strong> We aim to expand with user reviews, personalized recommendations, and global literary events, making LitSphere the ultimate destination for book lovers worldwide.</p>
+            <div class="image-gallery">
+                <img src="images/about-img-1.webp" alt="About Image 1" class="gallery-image animate">
+                <img src="images/about-img-2.jpeg" alt="About Image 2" class="gallery-image animate">
+                <img src="images/about-img-3.jpg" alt="About Image 3" class="gallery-image animate">
+            </div>
+        </div>
+        <div id="contact" class="contact-section">
+            <h2 class="section-title animate">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info animate">
+                    <p class="contact-text"><strong>Email:</strong> <a href="mailto:rabeeh0129@gmail.com" class="contact-link">rabeeh0129@gmail.com</a></p>
+                    <p class="contact-text"><strong>GitHub:</strong> <a href="https://github.com/RABEEH009" target="_blank" class="contact-link">github.com/RABEEH009</a></p>
+                    <p class="contact-text"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="contact-link">linkedin.com/in/rabeeh-n</a></p>
+                </div>
+                <form class="contact-form animate">
+                    <input type="text" placeholder="Your Full Name" class="form-input" required>
+                    <input type="email" placeholder="Your Email Address" class="form-input" required>
+                    <input type="tel" placeholder="Your Phone Number" class="form-input" required>
+                    <button type="submit" class="btn-primary animate">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div id="book-details-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <div id="book-details-content"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-column">
+            <h3 class="footer-heading">Social</h3>
+            <a href="https://github.com/RABEEH009" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/rabeeh-n-a5aa61329/" target="_blank" class="footer-link">LinkedIn</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <a href="mailto:rabeeh0129@gmail.com" class="footer-link">Email: rabeeh0129@gmail.com</a>
+        </div>
+        <div class="footer-column">
+            <h3 class="footer-heading">Legal</h3>
+            <p class="footer-text">Created by Rabeeh © 2025</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
