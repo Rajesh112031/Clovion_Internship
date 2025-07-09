@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeFlix - Trending Images</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
+            color: white;
+            font-family: 'Netflix Sans', 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(10px);
+        }
+
+        .header.scrolled {
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e50914, #ff6b35, #e50914);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover {
+            color: #e50914;
+            transform: translateY(-2px);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #e50914, #ff6b35);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0,0,0,0.95);
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-menu li:hover .dropdown {
+            display: flex;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(229, 9, 20, 0.3);
+            padding-left: 10px;
+            border-radius: 4px;
+        }
+
+        .dropdown-image {
+            width: 60px;
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        .dropdown-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-genre {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 10px 40px 10px 20px;
+            color: white;
+            font-size: 14px;
+            width: 250px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #e50914;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .notifications, .profile-pic {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #333, #555);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .notifications:hover, .profile-pic:hover {
+            transform: scale(1.1);
+            border-color: #e50914;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+        }
+
+        /* Trending Images Section */
+        .trending-section {
+            padding: 120px 60px 60px;
+            background: rgba(0,0,0,0.9);
+            border-radius: 12px;
+            margin: 0 60px;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, #e50914, #ff6b35);
+            border-radius: 2px;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 15px;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 20px 0;
+        }
+
+        .card {
+            min-width: 220px;
+            height: 330px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+        }
+
+        .card:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 20px 60px rgba(229, 9, 20, 0.3);
+            z-index: 100;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 70%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover .card-image::before {
+            opacity: 1;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: rgba(255,255,255,0.9);
+            color: #141414;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .card-info {
+            padding: 20px;
+            height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.2;
+        }
+
+        .card-genre {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .genre-tag {
+            background: rgba(229, 9, 20, 0.3);
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+            border: 1px solid rgba(229, 9, 20, 0.4);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 20px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .trending-section:hover .carousel-nav {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(229, 9, 20, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: -25px;
+        }
+
+        .carousel-nav.next {
+            right: -25px;
+        }
+
+        /* Manga and Anime Images */
+        .demon-slayer { background-image: url('https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&h=600&fit=crop'); }
+        .attack-titan { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
+        .my-hero { background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=600&fit=crop'); }
+        .jujutsu { background-image: url('https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=400&h=600&fit=crop'); }
+        .naruto { background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&h=600&fit=crop'); }
+        .one-punch { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
+        .tokyo-ghoul { background-image: url('https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=600&fit=crop'); }
+        .spy-family { background-image: url('https://images.unsplash.com/photo-1626968545467-7d0c6e56b0f0?w=400&h=600&fit=crop'); }
+        .chainsaw-man { background-image: url('https://images.unsplash.com/photo-1626968545471-7d0c6e56b0f1?w=400&h=600&fit=crop'); }
+
+        /* Loading Animation */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .card {
+                min-width: 200px;
+                height: 300px;
+            }
+            .dropdown {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .search-input {
+                width: 150px;
+            }
+
+            .trending-section {
+                padding: 100px 20px 40px;
+                margin: 0 20px;
+            }
+
+            .card {
+                min-width: 160px;
+                height: 240px;
+            }
+
+            .carousel-nav {
+                display: none;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #141414;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #e50914, #ff6b35);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #ff0f1a, #ff7a40);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="index.html" class="logo">AnimeFlix</a>
+        <nav>
+            <ul class="nav-menu">
+                <li>
+                    <a href="index.html#home">Home</a>
+                </li>
+                <li>
+                    <a href="trending.html">Trending</a>
+                    <div class="dropdown">
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image my-hero"></div>
+                            <div>
+                                <div class="dropdown-title">My Hero Academia</div>
+                                <div class="dropdown-genre">Superhero, School</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image naruto"></div>
+                            <div>
+                                <div class="dropdown-title">Naruto</div>
+                                <div class="dropdown-genre">Ninja, Adventure</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image one-punch"></div>
+                            <div>
+                                <div class="dropdown-title">One Punch Man</div>
+                                <div class="dropdown-genre">Superhero, Comedy</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image tokyo-ghoul"></div>
+                            <div>
+                                <div class="dropdown-title">Tokyo Ghoul</div>
+                                <div class="dropdown-genre">Horror, Supernatural</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image spy-family"></div>
+                            <div>
+                                <div class="dropdown-title">Spy x Family</div>
+                                <div class="dropdown-genre">Comedy, Action</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image chainsaw-man"></div>
+                            <div>
+                                <div class="dropdown-title">Chainsaw Man</div>
+                                <div class="dropdown-genre">Action, Horror</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search manga, anime...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="notifications"><i class="fas fa-bell"></i></div>
+            <div class="profile-pic"><i class="fas fa-user"></i></div>
+        </div>
+    </header>
+
+    <!-- Trending Images Section -->
+    <section class="trending-section">
+        <h2 class="section-title">
+            <i class="fas fa-fire"></i> Trending Images
+        </h2>
+        <div class="carousel">
+            <button class="carousel-nav prev" onclick="slideCarousel('trending-images', 'prev')">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-container" id="trending-images-carousel">
+                <div class="card">
+                    <div class="card-image demon-slayer">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Demon Slayer</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Action</span>
+                            <span class="genre-tag">Supernatural</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image attack-titan">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Attack on Titan</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Action</span>
+                            <span class="genre-tag">Drama</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image my-hero">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">My Hero Academia</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Superhero</span>
+                            <span class="genre-tag">School</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image jujutsu">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Jujutsu Kaisen</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Supernatural</span>
+                            <span class="genre-tag">Action</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image naruto">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Naruto</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Ninja</span>
+                            <span class="genre-tag">Adventure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image one-punch">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">One Punch Man</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Superhero</span>
+                            <span class="genre-tag">Comedy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image tokyo-ghoul">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Tokyo Ghoul</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Horror</span>
+                            <span class="genre-tag">Supernatural</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image spy-family">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Spy x Family</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Comedy</span>
+                            <span class="genre-tag">Action</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image chainsaw-man">
+                        <div class="card-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Chainsaw Man</div>
+                        <div class="card-genre">
+                            <span class="genre-tag">Action</span>
+                            <span class="genre-tag">Horror</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-nav next" onclick="slideCarousel('trending-images', 'next')">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Carousel Functionality
+        function slideCarousel(carouselId, direction) {
+            const container = document.getElementById(carouselId + '-carousel');
+            const cards = container.querySelectorAll('.card');
+            const cardWidth = cards[0].offsetWidth + 15; // Card width + gap
+            let currentTransform = parseFloat(getComputedStyle(container).transform.split(',')[4]) || 0;
+
+            if (direction === 'next') {
+                currentTransform -= cardWidth * 3; // Slide 3 cards at a time
+                if (Math.abs(currentTransform) + container.parentElement.offsetWidth
