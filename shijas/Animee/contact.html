@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Header (reused styles) */
         .header {
             position: fixed;
             top: 0;
@@ -67,6 +66,10 @@
             gap: 35px;
         }
 
+        .nav-menu li {
+            position: relative;
+        }
+
         .nav-menu a {
             color: rgba(255,255,255,0.9);
             text-decoration: none;
@@ -95,6 +98,59 @@
 
         .nav-menu a:hover::after {
             width: 100%;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0,0,0,0.95);
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-menu li:hover .dropdown {
+            display: flex;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(229, 9, 20, 0.3);
+            padding-left: 10px;
+            border-radius: 4px;
+        }
+
+        .dropdown-image {
+            width: 60px;
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+        }
+
+        .dropdown-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dropdown-genre {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
         }
 
         .user-profile {
@@ -156,12 +212,11 @@
             box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
         }
 
-        /* Contact Section */
         .contact-section {
-            padding: 120px 60px 60px;
+            padding: 100px 60px 60px;
             background: rgba(0,0,0,0.9);
             border-radius: 12px;
-            margin: 0 60px;
+            margin: 80px 60px 60px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -174,18 +229,19 @@
             text-align: center;
         }
 
-        .contact-content h2 {
-            font-size: 32px;
+        .contact-content h1 {
+            font-size: 48px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             background: linear-gradient(135deg, #ffffff, #e0e0e0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
         }
 
         .contact-content p {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.8;
             color: rgba(255,255,255,0.9);
             margin-bottom: 30px;
         }
@@ -220,26 +276,30 @@
             min-height: 150px;
         }
 
-        .contact-form button {
-            padding: 15px;
+        .btn {
+            padding: 15px 35px;
             border: none;
             border-radius: 8px;
             font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            background: linear-gradient(135deg, #e50914, #ff6b35);
-            color: white;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #e50914, #ff6b35);
+            color: white;
         }
 
-        .contact-form button:hover {
+        .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(229, 9, 20, 0.4);
         }
 
-        .contact-form button::before {
+        .btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -250,11 +310,24 @@
             transition: left 0.5s;
         }
 
-        .contact-form button:hover::before {
+        .btn:hover::before {
             left: 100%;
         }
 
-        /* Responsive Design */
+        .my-hero { background-image: url('https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&h=600&fit=crop'); }
+        .naruto { background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400&h=600&fit=crop'); }
+        .one-punch { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
+        .tokyo-ghoul { background-image: url('https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&h=600&fit=crop'); }
+        .spy-family { background-image: url('https://images.unsplash.com/photo-1626968545467-7d0c6e56b0f0?w=400&h=600&fit=crop'); }
+        .chainsaw-man { background-image: url('https://images.unsplash.com/photo-1626968545471-7d0c6e56b0f1?w=400&h=600&fit=crop'); }
+
+        @media (max-width: 1200px) {
+            .contact-section {
+                padding: 80px 40px 40px;
+                margin: 80px 40px 40px;
+            }
+        }
+
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
@@ -269,12 +342,12 @@
             }
 
             .contact-section {
-                padding: 100px 20px 40px;
-                margin: 0 20px;
+                padding: 80px 20px 20px;
+                margin: 60px 20px 20px;
             }
 
-            .contact-content h2 {
-                font-size: 28px;
+            .contact-content h1 {
+                font-size: 36px;
             }
 
             .contact-content p {
@@ -282,7 +355,17 @@
             }
         }
 
-        /* Custom Scrollbar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #e50914, #ff6b35);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -302,16 +385,68 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <header class="header" id="header">
         <a href="index.html" class="logo">AnimeFlix</a>
         <nav>
             <ul class="nav-menu">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#anime">Anime</a></li>
-                <li><a href="index.html#trending">Trending</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="index.html#home">Home</a>
+                </li>
+                <li>
+                    <a href="trending.html">Trending</a>
+                    <div class="dropdown">
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image my-hero"></div>
+                            <div>
+                                <div class="dropdown-title">My Hero Academia</div>
+                                <div class="dropdown-genre">Superhero, School</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image naruto"></div>
+                            <div>
+                                <div class="dropdown-title">Naruto</div>
+                                <div class="dropdown-genre">Ninja, Adventure</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image one-punch"></div>
+                            <div>
+                                <div class="dropdown-title">One Punch Man</div>
+                                <div class="dropdown-genre">Superhero, Comedy</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image tokyo-ghoul"></div>
+                            <div>
+                                <div class="dropdown-title">Tokyo Ghoul</div>
+                                <div class="dropdown-genre">Horror, Supernatural</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image spy-family"></div>
+                            <div>
+                                <div class="dropdown-title">Spy x Family</div>
+                                <div class="dropdown-genre">Comedy, Action</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image chainsaw-man"></div>
+                            <div>
+                                <div class="dropdown-title">Chainsaw Man</div>
+                                <div class="dropdown-genre">Action, Horror</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
             </ul>
         </nav>
         <div class="user-profile">
@@ -324,10 +459,9 @@
         </div>
     </header>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="contact-content">
-            <h2>Contact Us</h2>
+            <h1>Contact Us</h1>
             <p>Have questions or feedback? Reach out to the AnimeFlix team, and we'll get back to you as soon as possible!</p>
             <form class="contact-form">
                 <input type="text" placeholder="Your Name" required>
@@ -335,11 +469,20 @@
                 <textarea placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            <a href="index.html#home" class="btn">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
         </div>
     </section>
 
     <script>
-        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        });
+
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
