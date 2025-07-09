@@ -23,7 +23,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Enhanced Header */
+        /* Header Styles */
         .header {
             position: fixed;
             top: 0;
@@ -54,6 +54,10 @@
             text-decoration: none;
             animation: gradientShift 3s ease-in-out infinite;
             text-shadow: 0 0 30px rgba(229, 9, 20, 0.3);
+        }
+
+        .logo::after {
+            content: none !important; /* Remove the red underline for the logo */
         }
 
         @keyframes gradientShift {
@@ -101,7 +105,6 @@
             width: 100%;
         }
 
-        /* Dropdown Styles */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -214,7 +217,7 @@
             box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
         }
 
-        /* Enhanced Hero Section */
+        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(
@@ -374,7 +377,7 @@
             color: rgba(255,255,255,0.8);
         }
 
-        /* Enhanced Content Sections */
+        /* Content Sections */
         .content {
             padding: 0 60px;
             margin-top: -100px;
@@ -514,7 +517,7 @@
             font-weight: 700;
             margin-bottom: 10px;
             color: #ffffff;
-            text-shadow: 0 2px 4px Nurses(0,0,0,0.8);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -574,7 +577,6 @@
             right: -25px;
         }
 
-        /* About Section */
         .about-section {
             padding: 60px;
             background: rgba(0,0,0,0.9);
@@ -628,7 +630,6 @@
             top: 3px;
         }
 
-        /* Manga and Anime Images */
         .one-piece { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop'); }
         .demon-slayer { background-image: url('https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=400&h=600&fit=crop'); }
         .attack-titan { background-image: url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400&h=600&fit=crop'); }
@@ -647,7 +648,6 @@
         .blue-lock { background-image: url('https://images.unsplash.com/photo-1626968545472-7d0c6e56b0f2?w=400&h=600&fit=crop'); }
         .haikyuu { background-image: url('https://images.unsplash.com/photo-1626968545473-7d0c6e56b0f3?w=400&h=600&fit=crop'); }
 
-        /* Loading Animation */
         .loading-skeleton {
             background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
             background-size: 200% 100%;
@@ -659,7 +659,6 @@
             100% { background-position: -200% 0; }
         }
 
-        /* Responsive Design */
         @media (max-width: 1200px) {
             .card {
                 min-width: 200px;
@@ -710,7 +709,6 @@
             }
         }
 
-        /* Scroll Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -722,7 +720,6 @@
             transition: width 0.3s ease;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -742,10 +739,8 @@
     </style>
 </head>
 <body>
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Header -->
     <header class="header" id="header">
         <a href="#home" class="logo">AnimeFlix</a>
         <nav>
@@ -754,59 +749,54 @@
                     <a href="#home">Home</a>
                 </li>
                 <li>
-                    <a href="#anime">Anime</a>
+                    <a href="trending.html">Trending</a>
                     <div class="dropdown">
-                        <a href="#anime" class="dropdown-item">
-                            <div class="dropdown-image demon-slayer"></div>
-                            <div>
-                                <div class="dropdown-title">Demon Slayer</div>
-                                <div class="dropdown-genre">Action, Supernatural</div>
-                            </div>
-                        </a>
-                        <a href="#anime" class="dropdown-item">
-                            <div class="dropdown-image attack-titan"></div>
-                            <div>
-                                <div class="dropdown-title">Attack on Titan</div>
-                                <div class="dropdown-genre">Action, Drama</div>
-                            </div>
-                        </a>
-                        <a href="#anime" class="dropdown-item">
-                            <div class="dropdown-image jujutsu"></div>
-                            <div>
-                                <div class="dropdown-title">Jujutsu Kaisen</div>
-                                <div class="dropdown-genre">Supernatural, Action</div>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#trending">Trending</a>
-                    <div class="dropdown">
-                        <a href="#trending" class="dropdown-item">
+                        <a href="trending.html" class="dropdown-item">
                             <div class="dropdown-image my-hero"></div>
                             <div>
                                 <div class="dropdown-title">My Hero Academia</div>
                                 <div class="dropdown-genre">Superhero, School</div>
                             </div>
                         </a>
-                        <a href="#trending" class="dropdown-item">
+                        <a href="trending.html" class="dropdown-item">
                             <div class="dropdown-image naruto"></div>
                             <div>
                                 <div class="dropdown-title">Naruto</div>
                                 <div class="dropdown-genre">Ninja, Adventure</div>
                             </div>
                         </a>
-                        <a href="#trending" class="dropdown-item">
+                        <a href="trending.html" class="dropdown-item">
                             <div class="dropdown-image one-punch"></div>
                             <div>
                                 <div class="dropdown-title">One Punch Man</div>
                                 <div class="dropdown-genre">Superhero, Comedy</div>
                             </div>
                         </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image tokyo-ghoul"></div>
+                            <div>
+                                <div class="dropdown-title">Tokyo Ghoul</div>
+                                <div class="dropdown-genre">Horror, Supernatural</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image spy-family"></div>
+                            <div>
+                                <div class="dropdown-title">Spy x Family</div>
+                                <div class="dropdown-genre">Comedy, Action</div>
+                            </div>
+                        </a>
+                        <a href="trending.html" class="dropdown-item">
+                            <div class="dropdown-image chainsaw-man"></div>
+                            <div>
+                                <div class="dropdown-title">Chainsaw Man</div>
+                                <div class="dropdown-genre">Action, Horror</div>
+                            </div>
+                        </a>
                     </div>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="about.html">About</a>
                 </li>
                 <li>
                     <a href="contact.html">Contact</a>
@@ -823,7 +813,6 @@
         </div>
     </header>
 
-    <!-- Hero Section (Home) -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-badge">New Chapter Available</div>
@@ -851,9 +840,7 @@
         </div>
     </section>
 
-    <!-- Content Sections -->
     <main class="content">
-        <!-- Popular Anime -->
         <section class="section" id="anime">
             <h2 class="section-title">
                 <i class="fas fa-tv"></i> Popular Anime
@@ -982,10 +969,9 @@
             </div>
         </section>
 
-        <!-- Trending Now -->
         <section class="section" id="trending">
             <h2 class="section-title">
-                <i class="fas fa-fire"></i> exchanging Now
+                <i class="fas fa-fire"></i> Trending Now
             </h2>
             <div class="carousel">
                 <button class="carousel-nav prev" onclick="slideCarousel('trending', 'prev')">
@@ -1083,14 +1069,13 @@
             </div>
         </section>
 
-        <!-- Popular Manga -->
         <section class="section">
             <h2 class="section-title">
                 <i class="fas fa-crown"></i> Popular Manga
             </h2>
             <div class="carousel">
                 <button class="carousel-nav prev" onclick="slideCarousel('popular', 'prev')">
-                    <i class="fas26 fas fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="carousel-container" id="popular-carousel">
                     <div class="card">
@@ -1198,8 +1183,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-section" id="about">
+        <!-- <section class="about-section" id="about">
             <div class="about-content">
                 <h2>About AnimeFlix</h2>
                 <p>AnimeFlix is your ultimate destination for anime and manga streaming, offering a vast library of iconic series like Demon Slayer, Attack on Titan, and One Piece. Dive into thrilling adventures, supernatural battles, and heartwarming stories from the world of anime, all in one place.</p>
@@ -1212,11 +1196,10 @@
                 </ul>
                 <p>Join our community of anime enthusiasts and experience storytelling like never before. Whether you're a fan of action-packed shonen or heartwarming slice-of-life, AnimeFlix has something for everyone.</p>
             </div>
-        </section>
+        </section> -->
     </main>
 
     <script>
-        // Scroll Progress Bar
         window.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1224,7 +1207,6 @@
             document.getElementById('progressBar').style.width = scrollPercent + '%';
         });
 
-        // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -1234,15 +1216,14 @@
             }
         });
 
-        // Carousel Functionality
         function slideCarousel(carouselId, direction) {
             const container = document.getElementById(carouselId + '-carousel');
             const cards = container.querySelectorAll('.card');
-            const cardWidth = cards[0].offsetWidth + 15; // Card width + gap
+            const cardWidth = cards[0].offsetWidth + 15;
             let currentTransform = parseFloat(getComputedStyle(container).transform.split(',')[4]) || 0;
 
             if (direction === 'next') {
-                currentTransform -= cardWidth * 3; // Slide 3 cards at a time
+                currentTransform -= cardWidth * 3;
                 if (Math.abs(currentTransform) + container.parentElement.offsetWidth > container.scrollWidth) {
                     currentTransform = -(container.scrollWidth - container.parentElement.offsetWidth);
                 }
