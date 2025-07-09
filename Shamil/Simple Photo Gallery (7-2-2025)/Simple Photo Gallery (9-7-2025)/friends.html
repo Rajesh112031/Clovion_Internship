@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friends - Photo Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #050505;
+      color: #e6f9f1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background-color: #0d1e16;
+      box-shadow: 0 0 10px #31a77488;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #31a774;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      color: #ffffffcc;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #31a774;
+    }
+
+    .category-gallery {
+      margin-top: 120px;
+      padding: 2rem;
+    }
+
+    .category-gallery h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: #31a774;
+      text-shadow: 0 0 20px #31a77455;
+    }
+
+    .grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 12px rgba(49, 167, 116, 0.15);
+      cursor: pointer;
+    }
+
+    .grid-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(49, 167, 116, 0.5);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(49, 167, 116, 0.3);
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #0f1f17;
+      color: #aef2d7;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 8px rgba(49, 167, 116, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .category-gallery h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" id="navbar">
+    <div class="nav-logo">Photo Gallery</div>
+    <div class="nav-links">
+      <a href="index.html">← Home</a>
+      <a href="nature.html">Nature</a>
+      <a href="cities.html">Cities</a>
+      <a href="portraits.html">Portraits</a>
+      <a href="cars.html">Cars</a>
+      <a href="friends.html">Friends</a>
+    </div>
+  </nav>
+
+  <section class="category-gallery">
+    <h2>Friends Gallery</h2>
+    <div class="grid-gallery">
+      <img src="images/friends/friends01.jpg" alt="Friends 1" />
+      <img src="images/friends/friends02.jpg" alt="Friends 2" />
+      <img src="images/friends/friends03.jpg" alt="Friends 3" />
+      <img src="images/friends/friends04.jpg" alt="Friends 4" />
+      <img src="images/friends/friends05.jpg" alt="Friends 5" />
+      <img src="images/friends/friends06.jpg" alt="Friends 6" />
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close">×</span>
+    <img class="lightbox-img" src="" alt="Lightbox Image" />
+  </div>
+
+  <footer>
+    <p>© 2025 My Visual Diary. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.grid-gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
